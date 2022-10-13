@@ -67,3 +67,6 @@ func _on_evidence_screen_present_pressed(evi_name):
 	$DialogBubble.next(present_goto)
 	present_goto = ""
 	$EvidenceButton.set_visible(true)
+
+func start_screen_flash():
+	$ScreenFlash/AnimationPlayer.play("Flash")
