@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bx0rwpdh38nbv"
+path="res://.godot/imported/[BR] The Legend of Mae (Progressive Trance Mix).ogg-f0fb1a08b79f1511c3f84377a90c9baf.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/[BR] The Legend of Mae (Progressive Trance Mix).ogg"
+dest_files=["res://.godot/imported/[BR] The Legend of Mae (Progressive Trance Mix).ogg-f0fb1a08b79f1511c3f84377a90c9baf.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

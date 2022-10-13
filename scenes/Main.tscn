@@ -1,0 +1,56 @@
+[gd_scene load_steps=10 format=3 uid="uid://qmdyx4e4xyfm"]
+
+[ext_resource type="Script" path="res://scenes/Main.gd" id="1_um2e6"]
+[ext_resource type="Resource" uid="uid://c7tle3wmcregp" path="res://dialogue/trial/start.dialogue" id="2_lkt4j"]
+[ext_resource type="PackedScene" uid="uid://bg20svsrtape3" path="res://scenes/DialogBubble.tscn" id="3_05j2k"]
+[ext_resource type="Texture2D" uid="uid://dr06spemloybx" path="res://backgrounds/ct/judgestand.png" id="4_yqygb"]
+[ext_resource type="Texture2D" uid="uid://equb7x1dacwq" path="res://characters/monokuma/Normal.png" id="5_3cos0"]
+[ext_resource type="Texture2D" uid="uid://v6avns3pascl" path="res://backgrounds/ct/shade.png" id="6_fngl7"]
+[ext_resource type="PackedScene" path="res://scenes/MusicPlayer.tscn" id="7_1shgo"]
+[ext_resource type="Script" path="res://scenes/StatementIndicator.gd" id="8_lm432"]
+[ext_resource type="PackedScene" uid="uid://b72dnoylh2me7" path="res://scenes/EvidenceScreen.tscn" id="9_3qwbu"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_um2e6")
+dialogue_resource = ExtResource("2_lkt4j")
+dialogue_title = "start"
+metadata/_edit_lock_ = true
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(480, 270)
+texture = ExtResource("4_yqygb")
+metadata/_edit_lock_ = true
+
+[node name="CharSprite" type="Sprite2D" parent="."]
+position = Vector2(480, 270)
+texture = ExtResource("5_3cos0")
+metadata/_edit_lock_ = true
+
+[node name="Foreground" type="Sprite2D" parent="."]
+position = Vector2(480, 270)
+texture = ExtResource("6_fngl7")
+metadata/_edit_lock_ = true
+
+[node name="MusicPlayer" parent="." instance=ExtResource("7_1shgo")]
+
+[node name="DialogBubble" parent="." instance=ExtResource("3_05j2k")]
+
+[node name="StatementIndicator" type="HBoxContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 32.0
+grow_horizontal = 2
+alignment = 2
+script = ExtResource("8_lm432")
+
+[node name="EvidenceButton" type="Button" parent="."]
+offset_right = 172.0
+offset_bottom = 44.0
+text = "Evidence"
+
+[node name="EvidenceScreen" parent="." instance=ExtResource("9_3qwbu")]
+visible = false
+
+[connection signal="pressed" from="EvidenceButton" to="." method="_on_evidence_button_pressed"]
+[connection signal="back_pressed" from="EvidenceScreen" to="." method="_on_evidence_screen_back_pressed"]
+[connection signal="present_pressed" from="EvidenceScreen" to="." method="_on_evidence_screen_present_pressed"]

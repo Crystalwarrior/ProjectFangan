@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://batxx1ijdootd"
+path="res://.godot/imported/[T5] Mode Select.ogg-2e26c5567662afaee453c24e59454a22.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/[T5] Mode Select.ogg"
+dest_files=["res://.godot/imported/[T5] Mode Select.ogg-2e26c5567662afaee453c24e59454a22.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=4.217
+bpm=0.0
+beat_count=0
+bar_beats=4

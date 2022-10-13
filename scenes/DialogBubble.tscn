@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=3 uid="uid://bg20svsrtape3"]
+
+[ext_resource type="Script" path="res://scenes/DialogBubble.gd" id="1_wq137"]
+[ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_0dtiu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5d24i"]
+content_margin_left = 40.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 1, 1, 0.25098)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oj3c8"]
+content_margin_left = 40.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+draw_center = false
+
+[node name="Balloon" type="PanelContainer" node_paths=PackedStringArray("response_template", "character_label", "dialogue_label", "responses_menu")]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -129.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 2
+mouse_filter = 1
+script = ExtResource("1_wq137")
+response_template = NodePath("Margin/VBox/ResponseTemplate")
+character_label = NodePath("Margin/VBox/CharacterLabel")
+dialogue_label = NodePath("Margin/VBox/DialogueLabel")
+responses_menu = NodePath("Margin/VBox/Responses")
+
+[node name="Margin" type="MarginContainer" parent="."]
+offset_right = 960.0
+offset_bottom = 129.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+metadata/_edit_layout_mode = 1
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+offset_left = 20.0
+offset_top = 10.0
+offset_right = 940.0
+offset_bottom = 119.0
+theme_override_constants/separation = 10
+
+[node name="CharacterLabel" type="RichTextLabel" parent="Margin/VBox"]
+modulate = Color(1, 1, 1, 0.501961)
+offset_right = 920.0
+offset_bottom = 23.0
+mouse_filter = 1
+bbcode_enabled = true
+text = "Character"
+fit_content_height = true
+scroll_active = false
+
+[node name="DialogueLabel" parent="Margin/VBox" instance=ExtResource("2_0dtiu")]
+anchors_preset = 0
+anchor_right = 0.0
+offset_top = 33.0
+offset_right = 920.0
+offset_bottom = 56.0
+grow_horizontal = 1
+text = "Dialogue"
+
+[node name="Responses" type="VBoxContainer" parent="Margin/VBox"]
+offset_top = 66.0
+offset_right = 920.0
+offset_bottom = 66.0
+theme_override_constants/separation = 2
+
+[node name="ResponseTemplate" type="RichTextLabel" parent="Margin/VBox"]
+offset_top = 76.0
+offset_right = 920.0
+offset_bottom = 109.0
+theme_override_styles/focus = SubResource("StyleBoxFlat_5d24i")
+theme_override_styles/normal = SubResource("StyleBoxFlat_oj3c8")
+bbcode_enabled = true
+text = "Response"
+fit_content_height = true
+scroll_active = false
+shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false

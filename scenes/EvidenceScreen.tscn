@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=3 uid="uid://b72dnoylh2me7"]
+
+[ext_resource type="Script" path="res://scenes/EvidenceScreen.gd" id="1_qdy7r"]
+[ext_resource type="Texture2D" uid="uid://ddowqgrnsewm5" path="res://evidence/Unknown.png" id="2_r23de"]
+
+[node name="EvidenceScreen" type="Panel" node_paths=PackedStringArray("present_button", "back_button", "evidence_list", "evidence_image", "evidence_desc")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qdy7r")
+present_button = NodePath("PresentButton")
+back_button = NodePath("BackButton")
+evidence_list = NodePath("HBoxContainer/ItemList")
+evidence_image = NodePath("HBoxContainer/RightColumn/EvidenceImage")
+evidence_desc = NodePath("HBoxContainer/RightColumn/PanelContainer/RichTextLabel")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 56.0
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemList" type="ItemList" parent="HBoxContainer"]
+offset_right = 478.0
+offset_bottom = 426.0
+size_flags_horizontal = 3
+fixed_icon_size = Vector2i(32, 32)
+
+[node name="RightColumn" type="VBoxContainer" parent="HBoxContainer"]
+offset_left = 482.0
+offset_right = 960.0
+offset_bottom = 426.0
+size_flags_horizontal = 3
+
+[node name="EvidenceImage" type="TextureRect" parent="HBoxContainer/RightColumn"]
+custom_minimum_size = Vector2i(368, 208)
+offset_right = 478.0
+offset_bottom = 208.0
+texture = ExtResource("2_r23de")
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/RightColumn"]
+offset_top = 212.0
+offset_right = 478.0
+offset_bottom = 426.0
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/RightColumn/PanelContainer"]
+offset_right = 478.0
+offset_bottom = 214.0
+bbcode_enabled = true
+fit_content_height = true
+
+[node name="PresentButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -239.0
+offset_top = -53.0
+offset_right = 239.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Present"
+
+[node name="BackButton" type="Button" parent="."]
+offset_right = 172.0
+offset_bottom = 44.0
+text = "Back"

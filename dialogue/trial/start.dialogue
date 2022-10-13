@@ -1,0 +1,47 @@
+~ start
+do add_evidence("Evidence 1", "res://evidence/bg2x.png", "haha hello")
+do add_evidence("Evidence 2", "res://evidence/bg2x.png", "cw is [shake rate=20 level=10]epic[/shake]")
+do add_evidence("Library", "res://evidence/bg2x.png", "Nagito and Naegi were in the Library the entire time. They saw no one else.")
+
+Skip to testimony?
+- yes
+	do start_dialogue("res://dialogue/trial/debate_1.dialogue", "start")
+	=> END
+- no
+
+do change_music("res://music/[DCS] Gloomy Underpass.ogg")
+do change_sprite("res://characters/monokuma/Normal.png")
+Monokuma: Ahem![wait=0.5] Now then,[wait=0.2] let's begin with a basic explanation of the class trial!
+do change_sprite("res://characters/monokuma/Headtilt.png")
+Monokuma: During the trial you'll present your arguments for who the culprit is, and vote for "[color=orange][b]whodunnit[/b][/color]."
+do change_sprite("res://characters/monokuma/Bashful.png")
+Monokuma: Vote correctly, and only the blackened will be punished.[wait=0.5] But if you pick the wrong person...
+do change_sprite("res://characters/monokuma/Laugh.png")
+Monokuma: I'll punish everyone *besides* the blackened, and that person will graduate from this academy!
+do change_sprite("res://characters/monokuma/Bashful.png")
+Monokuma: Voting period will start after your time limit expires, so use your time wisely!
+do change_sprite("res://characters/monokuma/Claws.png")
+Monokuma: Also, refusing to vote will result in your [color=orange][b]death[/b][/color], so you better vote for someone!
+
+do change_music("res://music/[T5] Mode Select.ogg")
+~ question
+do change_sprite("res://characters/monokuma/Headtilt.png")
+Monokuma: Now, a quick question.[wait=0.5] Who is the protagonist of Danganronpa: Trigger Happy Havoc?!
+- Kaede Akamatsu
+	do change_sprite("res://characters/monokuma/Laugh.png")
+	Monokuma: [shake rate=20 level=10]Bzzzt, wroong![/shake] [wait=0.5]She's the protagonist of Danganronpa V3: Killing Harmony, dummy!
+- Makoto Naegi
+	do change_sprite("res://characters/monokuma/Bashful.png")
+	Monokuma: [wave amp=25 freq=5]That's correct! You got it right![/wave] [wait=0.5]He's such a loser, though!
+	do start_dialogue("res://dialogue/trial/debate_1.dialogue", "start")
+	=> END
+- Hajime Hinata
+	do change_sprite("res://characters/monokuma/Laugh.png")
+	Monokuma: [shake rate=20 level=10]Bzzzt, wroong![/shake] [wait=0.5]He's the protagonist of Super Danganronpa 2: Goodbye Despair, dummy!
+- Komaru Naegi
+	do change_sprite("res://characters/monokuma/Laugh.png")
+	Monokuma: [shake rate=20 level=10]Bzzzt, wroong![/shake] [wait=0.5]She's the protagonist of Danganronpa: Another Episode, dummy!
+- Junko Enoshima
+	do change_sprite("res://characters/monokuma/Laugh.png")
+	Monokuma: Oh, you're [shake rate=20 level=10]almost completely[/shake] correct![wait=0.5] She's the real protagonist of the Danganronpa franchise, [wave amp=25 freq=5]upupu~![/wave]
+=> question

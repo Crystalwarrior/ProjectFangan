@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dyxag0we6ekq6"
+path="res://.godot/imported/[DCS] Gloomy Underpass.ogg-6e83bd1864b4fcce4207b42f180f8d91.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/[DCS] Gloomy Underpass.ogg"
+dest_files=["res://.godot/imported/[DCS] Gloomy Underpass.ogg-6e83bd1864b4fcce4207b42f180f8d91.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
