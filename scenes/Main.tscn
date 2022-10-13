@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://qmdyx4e4xyfm"]
+[gd_scene load_steps=10 format=3 uid="uid://hbn07y37xlhf"]
 
 [ext_resource type="Script" path="res://scenes/Main.gd" id="1_um2e6"]
 [ext_resource type="Resource" uid="uid://c7tle3wmcregp" path="res://dialogue/trial/start.dialogue" id="2_lkt4j"]
@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://v6avns3pascl" path="res://backgrounds/ct/shade.png" id="6_fngl7"]
 [ext_resource type="PackedScene" path="res://scenes/MusicPlayer.tscn" id="7_1shgo"]
 [ext_resource type="Script" path="res://scenes/StatementIndicator.gd" id="8_lm432"]
-[ext_resource type="PackedScene" uid="uid://b72dnoylh2me7" path="res://scenes/EvidenceScreen.tscn" id="9_3qwbu"]
+[ext_resource type="PackedScene" uid="uid://cnjiv2qhpuwrw" path="res://scenes/EvidenceScreen.tscn" id="9_3qwbu"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_um2e6")
@@ -51,6 +51,12 @@ text = "Evidence"
 [node name="EvidenceScreen" parent="." instance=ExtResource("9_3qwbu")]
 visible = false
 
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
+[connection signal="choice_hover" from="DialogBubble" to="." method="_on_dialog_bubble_choice_hover"]
+[connection signal="input_choice" from="DialogBubble" to="." method="_on_dialog_bubble_input_choice"]
+[connection signal="input_next" from="DialogBubble" to="." method="_on_dialog_bubble_input_next"]
 [connection signal="pressed" from="EvidenceButton" to="." method="_on_evidence_button_pressed"]
 [connection signal="back_pressed" from="EvidenceScreen" to="." method="_on_evidence_screen_back_pressed"]
 [connection signal="present_pressed" from="EvidenceScreen" to="." method="_on_evidence_screen_present_pressed"]

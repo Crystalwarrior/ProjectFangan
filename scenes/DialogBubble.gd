@@ -1,5 +1,10 @@
 extends Control
 
+var sfx_text_next = preload("res://sounds/text_next.wav")
+var sfx_select = preload("res://sounds/select.wav")
+var sfx_hover = preload("res://sounds/hover.wav")
+
+@onready var sfx_player = $AudioStreamPlayer
 
 @export var response_template: Node
 
@@ -15,6 +20,10 @@ var temporary_game_states: Array = []
 
 ## See if we are waiting for the player
 var is_waiting_for_input: bool = false
+
+signal input_next
+signal input_choice(id)
+signal choice_hover(id)
 
 ## The current line
 var dialogue_line: Dictionary:
@@ -91,7 +100,6 @@ func start(dialogue_resource: Resource, title: String, extra_game_states: Array 
 
 ## Go to the next line
 func next(next_id: String) -> void:
-	print(next_id)
 	self.dialogue_line = await DialogueManager.get_next_dialogue_line(resource, next_id, temporary_game_states)
 
 
@@ -112,6 +120,7 @@ func configure_menu() -> void:
 		if i == 0:
 			item.focus_neighbor_top = item.get_path()
 			item.focus_previous = item.get_path()
+			item.grab_focus()
 		else:
 			item.focus_neighbor_top = items[i - 1].get_path()
 			item.focus_previous = items[i - 1].get_path()
@@ -123,10 +132,12 @@ func configure_menu() -> void:
 			item.focus_neighbor_bottom = items[i + 1].get_path()
 			item.focus_next = items[i + 1].get_path()
 		
+		item.focus_entered.connect(_on_response_focus_entered.bind(item))
 		item.mouse_entered.connect(_on_response_mouse_entered.bind(item))
 		item.gui_input.connect(_on_response_gui_input.bind(item))
-	
-	items[0].grab_focus()
+		
+		if Rect2(Vector2(), item.size).has_point(item.get_local_mouse_position()):
+			item.grab_focus()
 
 
 # Get a list of enabled items
@@ -147,23 +158,34 @@ func _on_mutation() -> void:
 	hide()
 
 
+func _on_response_focus_entered(item: Control) -> void:
+	if "Disallowed" in item.name: return
+	sfx_player.stream = sfx_hover
+	sfx_player.play()
+	emit_signal("choice_hover", item.get_index())
+
+
 func _on_response_mouse_entered(item: Control) -> void:
 	if "Disallowed" in item.name: return
-	
 	item.grab_focus()
 
 
 func _on_response_gui_input(event: InputEvent, item: Control) -> void:
 	if "Disallowed" in item.name: return
-	
-	if event is InputEventMouseButton and event.is_pressed() and event.button_index == 1:
-		next(dialogue_line.responses[item.get_index()].next_id)
-	elif event.is_action_pressed("ui_accept") and item in get_responses():
-		next(dialogue_line.responses[item.get_index()].next_id)
+	var idx := item.get_index()
+	if (event is InputEventMouseButton and event.is_pressed() and event.button_index == 1) or \
+	(event.is_action_pressed("ui_accept") and item in get_responses()):
+		sfx_player.stream = sfx_select
+		sfx_player.play()
+		emit_signal("input_choice", idx)
+		next(dialogue_line.responses[idx].next_id)
 
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not is_waiting_for_input: return
 
 	if event.is_action_pressed("dialogue_next"):
+		sfx_player.stream = sfx_text_next
+		sfx_player.play()
+		emit_signal("input_next")
 		next(dialogue_line.next_id)

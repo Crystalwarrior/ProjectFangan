@@ -38,9 +38,11 @@ Celeste: Of course, Aoi can't corraborate my testimony, seeing as she is decease
 ~ present_1
 if presented == "Library"
 	do set_statements(0)
+	do sfx("res://sounds/objection.wav")
 	do change_music("res://music/[DCS] A Cyber-Like Enclosed Space.ogg")
 	Protagonist: That's wrong! Two people were in the library the entire time, and they never testified to seeing you!
 	do change_sprite("res://characters/byakuya/Shocked.png")
+	do sfx("res://sounds/drama.wav")
 	Byakuya: ......
 	This is the end of the demo lol
 	=> END

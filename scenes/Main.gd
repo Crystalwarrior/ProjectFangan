@@ -12,7 +12,12 @@ func _ready():
 	$DialogBubble.start(dialogue_resource, dialogue_title)
 
 
-func start_dialogue(path, title):
+func sfx(path: String):
+	$SFXPlayer.stream = load(path)
+	$SFXPlayer.play()
+
+
+func start_dialogue(path: String, title: String):
 	$DialogBubble.dialogue_line = {}
 	$DialogBubble.start(load(path), title)
 
@@ -67,3 +72,15 @@ func _on_evidence_screen_present_pressed(evi_name):
 	$DialogBubble.next(present_goto)
 	present_goto = ""
 	$EvidenceButton.set_visible(true)
+
+
+func _on_dialog_bubble_input_next():
+	pass
+
+
+func _on_dialog_bubble_input_choice(id):
+	pass
+
+
+func _on_dialog_bubble_choice_hover(id):
+	pass

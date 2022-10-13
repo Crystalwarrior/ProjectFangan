@@ -88,3 +88,5 @@ scroll_active = false
 shortcut_keys_enabled = false
 meta_underlined = false
 hint_underlined = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
