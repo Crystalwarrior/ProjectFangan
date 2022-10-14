@@ -74,6 +74,7 @@ func _on_evidence_screen_present_pressed(evi_name):
 	$EvidenceButton.set_visible(true)
 
 
+
 func _on_dialog_bubble_input_next():
 	pass
 
@@ -84,3 +85,7 @@ func _on_dialog_bubble_input_choice(id):
 
 func _on_dialog_bubble_choice_hover(id):
 	pass
+
+func start_screen_flash():
+	$ScreenFlash/AnimationPlayer.play("Flash")
+
