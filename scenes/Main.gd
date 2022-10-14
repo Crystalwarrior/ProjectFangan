@@ -18,6 +18,18 @@ extends Node
 var present_goto = ""
 var presented = ""
 
+var flags = {}
+
+
+func set_flag(key: String, value: String):
+	flags[key] = value
+
+
+func get_flag(key: String):
+	if flags.has(key):
+		return flags[key]
+	return ""
+
 
 func _ready():
 	dialog_bubble.start(dialogue_resource, dialogue_title)

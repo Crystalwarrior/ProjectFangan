@@ -1,8 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bmdhht7m0fbgy"]
+[gd_scene load_steps=12 format=3 uid="uid://crswtl6abaoi6"]
 
 [ext_resource type="Script" path="res://scenes/Main.gd" id="1_um2e6"]
 [ext_resource type="Resource" uid="uid://c7tle3wmcregp" path="res://dialogue/trial/start.dialogue" id="2_lkt4j"]
-[ext_resource type="PackedScene" uid="uid://bbo3wnxty7ohr" path="res://scenes/DialogBubble.tscn" id="3_05j2k"]
+[ext_resource type="PackedScene" uid="uid://c6ntc6rlqskex" path="res://scenes/DialogBubble.tscn" id="3_05j2k"]
 [ext_resource type="Texture2D" uid="uid://dr06spemloybx" path="res://backgrounds/ct/judgestand.png" id="4_yqygb"]
 [ext_resource type="Texture2D" uid="uid://equb7x1dacwq" path="res://characters/monokuma/Normal.png" id="5_3cos0"]
 [ext_resource type="Texture2D" uid="uid://v6avns3pascl" path="res://backgrounds/ct/shade.png" id="6_fngl7"]

@@ -4,53 +4,76 @@ do change_sprite("res://characters/byakuya/Disgusted.png")
 do change_bg("res://backgrounds/ct/1.png")
 do change_fg("res://backgrounds/ct/stand.png")
 Byakuya: That's enough. We have testimony to go through.
-do set_statements(3)
 
 ~ statement_1
-do select_statement(1)
-set present_goto = "present_1"
-do next_line("statement_2")
-do previous_line("statement_3")
+if get_flag("tutorial_seen") == "2"
+	do select_statement(1)
+	set present_goto = "present_1"
+	do next_line("statement_2")
+	do previous_line("statement_3")
+
 do change_bg("res://backgrounds/ct/1.png")
 do change_sprite("res://characters/byakuya/Disgusted.png")
 Byakuya: At the time of the murder, I was reading a book in the study by myself.
+if get_flag("tutorial_seen") == "1"
+	=> tutorial
 
 ~ statement_2
-do select_statement(2)
-set present_goto = "present_2"
-do next_line("statement_3")
-do previous_line("statement_1")
+if get_flag("tutorial_seen") == "2"
+	do select_statement(2)
+	set present_goto = "present_2"
+	do next_line("statement_3")
+	do previous_line("statement_1")
+
 do change_bg("res://backgrounds/ct/2.png")
 do change_sprite("res://characters/Celeste/cheeky.png")
 Celeste: So you were by yourself? Curious... I was with Aoi in the Laundry Room as we washed our clothes.
 
 ~ statement_3
-do select_statement(3)
-set present_goto = "present_3"
-do next_line("statement_1")
-do previous_line("statement_2")
+if get_flag("tutorial_seen") == "2"
+	do select_statement(3)
+	set present_goto = "present_3"
+	do next_line("statement_1")
+	do previous_line("statement_2")
+
+do change_bg("res://backgrounds/ct/2.png")
 do change_sprite("res://characters/Celeste/playful.png")
 Celeste: Of course, Aoi can't corraborate my testimony, seeing as she is deceased.
+if get_flag("tutorial_seen") == ""
+	do set_flag("tutorial_seen", "1")
+	=> statement_1
+
+~ tutorial
+do change_bg("res://backgrounds/ct/3.png")
+do change_sprite("res://characters/hajime/Speaking.png")
+Hajime: [color=aqua](Wait a second, Togami is repeating himself.)[/color]
+do change_sprite("res://characters/hajime/Explanation.png")
+Hajime: [color=aqua](This must be a [color=lime]Circular Debate[/color]. I can go back and forth between statements to search for a [color=orange]Contradiction[/color] by [color=lime]Presenting[/color] a piece of [color=orange]Evidence[/color].)[/color]
+do set_flag("tutorial_seen", "2")
+do set_statements(3)
+=> statement_1
 
 ~ present_1
 do next_line("")
 do previous_line("")
-if presented == "Library"
+if presented != "Library"
+	do change_sprite("res://characters/byakuya/Contempt.png")
+	Byakuya: What's this? You're presenting {{presented}} to me? Don't make me laugh.
+	=> statement_1
+else:
 	do set_statements(0)
 	do sfx("res://sounds/objection.wav")
 	do change_music("res://music/[DCS] A Cyber-Like Enclosed Space.ogg")
+	do change_bg("res://backgrounds/ct/3.png")
 	do change_sprite("res://characters/hajime/Firm.png")
 	Hajime: That's wrong! Two people were in the library the entire time, and they never testified to seeing you!
 	do flash()
+	do change_bg("res://backgrounds/ct/1.png")
 	do change_sprite("res://characters/byakuya/Shocked.png")
 	do sfx("res://sounds/drama.wav")
 	Byakuya: ......
 	This is the end of the demo lol
 	=> END
-else:
-	do change_sprite("res://characters/byakuya/Contempt.png")
-	Byakuya: What's this? You're presenting {{presented}} to me? Don't make me laugh.
-	=> statement_1
 
 ~ present_2
 do next_line("")
