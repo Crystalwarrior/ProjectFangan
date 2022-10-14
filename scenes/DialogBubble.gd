@@ -12,6 +12,9 @@ var sfx_scroll = preload("res://sounds/scroll.wav")
 @export var text_label: RichTextLabel
 @export var responses_menu: VBoxContainer
 
+@export var next_button: Control
+@export var previous_button: Control
+
 ## The dialogue resource
 var resource: Resource
 
@@ -22,8 +25,25 @@ var temporary_game_states: Array = []
 var is_waiting_for_input: bool = false
 
 signal input_next
+signal input_previous
 signal input_choice(id)
 signal choice_hover(id)
+
+# For Circular Debates, the next title to go to when "next" is pressed
+var next_line: String:
+	set(next_line_text):
+		next_button.set_visible(next_line_text != "")
+		next_line = next_line_text
+	get:
+		return next_line
+
+# For Circular Debates, the previous title to go to when "previous" is pressed
+var previous_line: String:
+	set(previous_line_text):
+		previous_button.set_visible(previous_line_text != "")
+		previous_line = previous_line_text
+	get:
+		return previous_line
 
 ## The current line
 var dialogue_line: Dictionary:
@@ -47,9 +67,11 @@ var dialogue_line: Dictionary:
 		text_label.dialogue_line = dialogue_line
 		await text_label.reset_height()
 
+		responses_menu.hide()
 		# Show any responses we have
 		responses_menu.modulate.a = 0
 		if dialogue_line.responses.size() > 0:
+			responses_menu.show()
 			for response in dialogue_line.responses:
 				# Duplicate the template so we can grab the fonts, sizing, etc
 				var item: RichTextLabel = response_template.duplicate(0)
@@ -85,8 +107,12 @@ var dialogue_line: Dictionary:
 
 func _ready() -> void:
 	response_template.hide()
+	next_button.hide()
+	previous_button.hide()
 	hide()
 
+	next_button.pressed.connect(_on_next_pressed)
+	previous_button.pressed.connect(_on_previous_pressed)
 	DialogueManager.mutation.connect(_on_mutation)
 
 
@@ -153,6 +179,24 @@ func get_responses() -> Array:
 ### Signals
 
 
+func _on_next_pressed() -> void:
+	if not is_waiting_for_input: return
+
+	sfx_player.stream = sfx_text_next
+	sfx_player.play()
+	emit_signal("input_next")
+	next(next_line)
+
+
+func _on_previous_pressed() -> void:
+	if not is_waiting_for_input: return
+
+	sfx_player.stream = sfx_text_next
+	sfx_player.play()
+	emit_signal("input_previous")
+	next(previous_line)
+
+
 func _on_mutation() -> void:
 	is_waiting_for_input = false
 #	hide()
@@ -188,4 +232,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		sfx_player.stream = sfx_text_next
 		sfx_player.play()
 		emit_signal("input_next")
-		next(dialogue_line.next_id)
+		if next_line != "":
+			next(next_line)
+		else:
+			next(dialogue_line.next_id)
+	elif event.is_action_pressed("dialogue_previous") and previous_line != "":
+		sfx_player.stream = sfx_text_next
+		sfx_player.play()
+		emit_signal("input_next")
+		next(previous_line)

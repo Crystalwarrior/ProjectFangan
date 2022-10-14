@@ -65,8 +65,19 @@ func select_statement(idx: int):
 	statement_indicator.select_statement(idx)
 
 
+func next_line(title: String):
+	dialog_bubble.next_line = title
+
+
+func previous_line(title: String):
+	dialog_bubble.previous_line = title
+
+
 func add_evidence(evi_name: String, evi_image: String, evi_desc: String):
 	evidence_screen.add_evidence(evi_name, evi_image, evi_desc)
+
+
+# Signals
 
 
 func _on_evidence_button_pressed():
@@ -85,7 +96,6 @@ func _on_evidence_screen_present_pressed(evi_name):
 	evidence_button.set_visible(true)
 
 
-
 func _on_dialog_bubble_input_next():
 	pass
 
@@ -96,6 +106,7 @@ func _on_dialog_bubble_input_choice(id):
 
 func _on_dialog_bubble_choice_hover(id):
 	pass
+
 
 # TODO: Generalize this into a proper effects system
 func flash():
