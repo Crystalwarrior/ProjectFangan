@@ -2,14 +2,14 @@ extends Control
 
 var sfx_text_next = preload("res://sounds/text_next.wav")
 var sfx_select = preload("res://sounds/select.wav")
-var sfx_hover = preload("res://sounds/hover.wav")
+var sfx_scroll = preload("res://sounds/scroll.wav")
 
-@onready var sfx_player = $AudioStreamPlayer
+@export var sfx_player: AudioStreamPlayer
 
 @export var response_template: Node
 
-@export var character_label: RichTextLabel
-@export var dialogue_label: RichTextLabel
+@export var name_label: RichTextLabel
+@export var text_label: RichTextLabel
 @export var responses_menu: VBoxContainer
 
 ## The dialogue resource
@@ -39,13 +39,13 @@ var dialogue_line: Dictionary:
 		
 		dialogue_line = next_dialogue_line
 		
-		character_label.visible = not dialogue_line.character.is_empty()
-		character_label.text = dialogue_line.character
+		name_label.visible = not dialogue_line.character.is_empty()
+		name_label.text = dialogue_line.character
 		
-		dialogue_label.modulate.a = 0
-		dialogue_label.size.x = dialogue_label.get_parent().size.x - 1
-		dialogue_label.dialogue_line = dialogue_line
-		await dialogue_label.reset_height()
+		text_label.modulate.a = 0
+		text_label.size.x = text_label.get_parent().size.x - 1
+		text_label.dialogue_line = dialogue_line
+		await text_label.reset_height()
 
 		# Show any responses we have
 		responses_menu.modulate.a = 0
@@ -64,10 +64,10 @@ var dialogue_line: Dictionary:
 		# Show our balloon
 		visible = true
 		
-		dialogue_label.modulate.a = 1
+		text_label.modulate.a = 1
 		if not dialogue_line.text.is_empty():
-			dialogue_label.type_out()
-			await dialogue_label.finished_typing
+			text_label.type_out()
+			await text_label.finished_typing
 		
 		# Wait for input
 		if dialogue_line.responses.size() > 0:
@@ -155,12 +155,12 @@ func get_responses() -> Array:
 
 func _on_mutation() -> void:
 	is_waiting_for_input = false
-	hide()
+#	hide()
 
 
 func _on_response_focus_entered(item: Control) -> void:
 	if "Disallowed" in item.name: return
-	sfx_player.stream = sfx_hover
+	sfx_player.stream = sfx_scroll
 	sfx_player.play()
 	emit_signal("choice_hover", item.get_index())
 

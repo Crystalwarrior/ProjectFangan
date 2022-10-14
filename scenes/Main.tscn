@@ -1,14 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://nxmxbktkbrlp"]
+[gd_scene load_steps=12 format=3 uid="uid://bmdhht7m0fbgy"]
 
 [ext_resource type="Script" path="res://scenes/Main.gd" id="1_um2e6"]
-[ext_resource type="Resource" uid="uid://c7tle3wmcregp" path="res://dialogue/trial/start.dialogue" id="2_lkt4j"]
-[ext_resource type="PackedScene" uid="uid://bg20svsrtape3" path="res://scenes/DialogBubble.tscn" id="3_05j2k"]
-[ext_resource type="Texture2D" uid="uid://dr06spemloybx" path="res://backgrounds/ct/judgestand.png" id="4_yqygb"]
-[ext_resource type="Texture2D" uid="uid://equb7x1dacwq" path="res://characters/monokuma/Normal.png" id="5_3cos0"]
-[ext_resource type="Texture2D" uid="uid://v6avns3pascl" path="res://backgrounds/ct/shade.png" id="6_fngl7"]
+[ext_resource type="Resource" path="res://dialogue/trial/start.dialogue" id="2_lkt4j"]
+[ext_resource type="PackedScene" path="res://scenes/DialogBubble.tscn" id="3_05j2k"]
+[ext_resource type="Texture2D" path="res://backgrounds/ct/judgestand.png" id="4_yqygb"]
+[ext_resource type="Texture2D" path="res://characters/monokuma/Normal.png" id="5_3cos0"]
+[ext_resource type="Texture2D" path="res://backgrounds/ct/shade.png" id="6_fngl7"]
 [ext_resource type="PackedScene" path="res://scenes/MusicPlayer.tscn" id="7_1shgo"]
 [ext_resource type="Script" path="res://scenes/StatementIndicator.gd" id="8_lm432"]
-[ext_resource type="PackedScene" uid="uid://cavrlxxlb1wkk" path="res://scenes/EvidenceScreen.tscn" id="9_3qwbu"]
+[ext_resource type="PackedScene" path="res://scenes/EvidenceScreen.tscn" id="9_3qwbu"]
 
 [sub_resource type="Animation" id="Animation_o2c1q"]
 resource_name = "Flash"
@@ -30,11 +30,26 @@ _data = {
 "Flash": SubResource("Animation_o2c1q")
 }
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" node_paths=PackedStringArray("music_player", "sfx_player", "background", "char_sprite", "foreground", "effect_player", "dialog_bubble", "statement_indicator", "evidence_button", "evidence_screen")]
 script = ExtResource("1_um2e6")
 dialogue_resource = ExtResource("2_lkt4j")
 dialogue_title = "start"
+music_player = NodePath("MusicPlayer")
+sfx_player = NodePath("SFXPlayer")
+background = NodePath("Background")
+char_sprite = NodePath("CharSprite")
+foreground = NodePath("Foreground")
+effect_player = NodePath("EffectPlayer")
+dialog_bubble = NodePath("DialogBubble")
+statement_indicator = NodePath("StatementIndicator")
+evidence_button = NodePath("EvidenceButton")
+evidence_screen = NodePath("EvidenceScreen")
 metadata/_edit_lock_ = true
+
+[node name="MusicPlayer" parent="." instance=ExtResource("7_1shgo")]
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(480, 270)
@@ -51,6 +66,13 @@ position = Vector2(480, 270)
 texture = ExtResource("6_fngl7")
 metadata/_edit_lock_ = true
 
+[node name="EffectPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../ScreenFlash")
+reset_on_save = false
+libraries = {
+"": SubResource("AnimationLibrary_f0ixr")
+}
+
 [node name="ScreenFlash" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
@@ -58,14 +80,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="ScreenFlash"]
-reset_on_save = false
-libraries = {
-"": SubResource("AnimationLibrary_f0ixr")
-}
-
-[node name="MusicPlayer" parent="." instance=ExtResource("7_1shgo")]
 
 [node name="DialogBubble" parent="." instance=ExtResource("3_05j2k")]
 
@@ -84,9 +98,6 @@ text = "Evidence"
 
 [node name="EvidenceScreen" parent="." instance=ExtResource("9_3qwbu")]
 visible = false
-
-[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
-bus = &"SFX"
 
 [connection signal="choice_hover" from="DialogBubble" to="." method="_on_dialog_bubble_choice_hover"]
 [connection signal="input_choice" from="DialogBubble" to="." method="_on_dialog_bubble_input_choice"]

@@ -3,75 +3,86 @@ extends Node
 
 @export var dialogue_resource: Resource
 @export var dialogue_title: String = ""
+@export var music_player: Node
+@export var sfx_player: AudioStreamPlayer
+@export var background: Sprite2D
+@export var char_sprite: Sprite2D
+@export var foreground: Sprite2D
+@export var effect_player: AnimationPlayer
+@export var dialog_bubble: Node
+@export var statement_indicator: Control
+@export var evidence_button: Button
+@export var evidence_screen: Control
+
 
 var present_goto = ""
 var presented = ""
 
 
 func _ready():
-	$DialogBubble.start(dialogue_resource, dialogue_title)
+	dialog_bubble.start(dialogue_resource, dialogue_title)
 
 
 func sfx(path: String):
-	$SFXPlayer.stream = load(path)
-	$SFXPlayer.play()
+	sfx_player.stream = load(path)
+	sfx_player.play()
 
 
 func start_dialogue(path: String, title: String):
-	$DialogBubble.dialogue_line = {}
-	$DialogBubble.start(load(path), title)
+	dialog_bubble.dialogue_line = {}
+	dialog_bubble.start(load(path), title)
 
 func change_sprite(path: String):
 	if path == "":
-		$CharSprite.texture = null
+		char_sprite.texture = null
 		return
-	$CharSprite.texture = load(path)
+	char_sprite.texture = load(path)
 
 
 func change_bg(path: String):
 	if path == "":
-		$Background.texture = null
+		background.texture = null
 		return
-	$Background.texture = load(path)
+	background.texture = load(path)
 
 
 func change_fg(path: String):
 	if path == "":
-		$Foreground.texture = null
+		foreground.texture = null
 		return
-	$Foreground.texture = load(path)
+	foreground.texture = load(path)
 
 
 func change_music(path: String):
-	$MusicPlayer.play_music(load(path))
+	music_player.play_music(load(path))
 
 
 func set_statements(number: int):
-	$StatementIndicator.set_statements(number)
+	statement_indicator.set_statements(number)
 
 
 func select_statement(idx: int):
-	$StatementIndicator.select_statement(idx)
+	statement_indicator.select_statement(idx)
 
 
 func add_evidence(evi_name: String, evi_image: String, evi_desc: String):
-	$EvidenceScreen.add_evidence(evi_name, evi_image, evi_desc)
+	evidence_screen.add_evidence(evi_name, evi_image, evi_desc)
 
 
 func _on_evidence_button_pressed():
-	$EvidenceScreen.show_screen(present_goto != "")
-	$EvidenceButton.set_visible(false)
+	evidence_screen.show_screen(present_goto != "")
+	evidence_button.set_visible(false)
 
 
 func _on_evidence_screen_back_pressed():
-	$EvidenceButton.set_visible(true)
+	evidence_button.set_visible(true)
 
 
 func _on_evidence_screen_present_pressed(evi_name):
 	presented = evi_name
-	$DialogBubble.next(present_goto)
+	dialog_bubble.next(present_goto)
 	present_goto = ""
-	$EvidenceButton.set_visible(true)
+	evidence_button.set_visible(true)
 
 
 
@@ -86,6 +97,7 @@ func _on_dialog_bubble_input_choice(id):
 func _on_dialog_bubble_choice_hover(id):
 	pass
 
-func start_screen_flash():
-	$ScreenFlash/AnimationPlayer.play("Flash")
+# TODO: Generalize this into a proper effects system
+func flash():
+	effect_player.play("Flash")
 

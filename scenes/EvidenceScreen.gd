@@ -7,7 +7,7 @@ var placeholder_image = preload("res://evidence/Unknown.png")
 var sfx_paper_up = preload("res://sounds/paper_up.wav")
 var sfx_paper_down = preload("res://sounds/paper_down.wav")
 var sfx_select = preload("res://sounds/select.wav")
-var sfx_hover = preload("res://sounds/hover.wav")
+var sfx_scroll = preload("res://sounds/scroll.wav")
 
 @export var present_button: Button
 @export var back_button: Button
@@ -64,7 +64,7 @@ func _on_item_selected(idx: int):
 	evidence_image.texture = load(evidence_array[idx]["image"])
 	evidence_desc.text = evidence_array[idx]["desc"]
 	present_button.set_disabled(not evidence_list.is_anything_selected() or not can_present)
-	sfx_player.stream = sfx_hover
+	sfx_player.stream = sfx_scroll
 	sfx_player.play()
 
 func _on_back_pressed():
@@ -76,5 +76,5 @@ func _on_back_pressed():
 func _on_present_pressed():
 	set_visible(false)
 	emit_signal("present_pressed", evidence_array[evidence_list.get_selected_items()[0]]["name"])
-	sfx_player.stream = sfx_select
+	sfx_player.stream = sfx_paper_down
 	sfx_player.play()
