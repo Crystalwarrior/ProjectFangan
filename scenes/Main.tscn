@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://v6avns3pascl" path="res://backgrounds/ct/shade.png" id="6_fngl7"]
 [ext_resource type="PackedScene" path="res://scenes/MusicPlayer.tscn" id="7_1shgo"]
 [ext_resource type="Script" path="res://scenes/StatementIndicator.gd" id="8_lm432"]
-[ext_resource type="PackedScene" uid="uid://cnjiv2qhpuwrw" path="res://scenes/EvidenceScreen.tscn" id="9_3qwbu"]
+[ext_resource type="PackedScene" uid="uid://cavrlxxlb1wkk" path="res://scenes/EvidenceScreen.tscn" id="9_3qwbu"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_um2e6")
