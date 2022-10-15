@@ -70,7 +70,9 @@ do change_bg("res://backgrounds/ct/3.png")
 do change_sprite("res://characters/byakuya/Tell Them Naegi.png")
 Byakuya: Testify. Now.
 
-do effect("ScreenFlash")
+do change_music("res://music/[BR] The Legend of Mae (Progressive Trance Mix).ogg")
+do sfx("res://sounds/ding.wav")
+do effect("Flash")
 do change_bg("res://backgrounds/ct/3.png")
 do change_sprite("res://characters/junko/Restless.png")
 Junko: Alright, asshole. Nagito was hanging from a climbing rope at the gym, eyes almost popping out. I would know, I was the first to find the body.
@@ -112,3 +114,4 @@ Byakuya: Good. We're finally making progress. Now, speak about the body itself.
 do change_bg("res://backgrounds/ct/2.png")
 do change_sprite("res://characters/himiko/lookdownsad.png")
 Himiko: ....
+
