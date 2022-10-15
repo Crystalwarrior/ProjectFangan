@@ -73,6 +73,7 @@ next_button = NodePath("NextButton")
 previous_button = NodePath("PreviousButton")
 
 [node name="Balloon" type="PanelContainer" parent="."]
+layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -87,6 +88,7 @@ mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_gykp8")
 
 [node name="VBox" type="VBoxContainer" parent="Balloon"]
+layout_mode = 2
 offset_left = 20.0
 offset_top = 10.0
 offset_right = 924.0
@@ -95,6 +97,7 @@ theme_override_constants/separation = 5
 
 [node name="NameLabel" type="RichTextLabel" parent="Balloon/VBox"]
 modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
 offset_right = 904.0
 offset_bottom = 23.0
 mouse_filter = 1
@@ -104,6 +107,7 @@ fit_content_height = true
 scroll_active = false
 
 [node name="TextLabel" parent="Balloon/VBox" instance=ExtResource("2_0dtiu")]
+layout_mode = 2
 anchors_preset = 0
 anchor_right = 0.0
 offset_top = 28.0
@@ -111,12 +115,19 @@ offset_right = 904.0
 offset_bottom = 109.0
 grow_horizontal = 1
 size_flags_vertical = 3
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.470588)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 3
+theme_override_constants/outline_size = 2
 text = "Dialogue
 Dialogue
 Dialogue"
 fit_content_height = false
 
 [node name="NextButton" type="TextureButton" parent="."]
+layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
@@ -128,6 +139,7 @@ texture_normal = ExtResource("3_olrcj")
 stretch_mode = 3
 
 [node name="PreviousButton" type="TextureButton" parent="."]
+layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 128.0
@@ -137,6 +149,7 @@ stretch_mode = 3
 flip_h = true
 
 [node name="Responses" type="VBoxContainer" parent="."]
+layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
@@ -151,6 +164,7 @@ grow_vertical = 2
 theme_override_constants/separation = 2
 
 [node name="ResponseTemplate" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 480.0
 offset_top = 254.0
 offset_right = 924.0
