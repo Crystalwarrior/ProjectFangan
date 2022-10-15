@@ -99,7 +99,7 @@ do change_bg("res://backgrounds/ct/3.png")
 do change_sprite("res://characters/hajime/Thinking.png")
 Hajime: [color=aqua](So the three of them can back each other up. I should note that down in my evidence.)[/color]
 
-do add_evidence("Body Discovery", "res://evidence/pda.png", "Junko, Mondo and Himiko found Nagito's body in the gym. His body was hanging from a climbing rope. The three of them activated the Body Discovery Announcement through their PDA's.")
+do add_evidence("Body Discovery", "res://evidence/pda.png", "Junko, Mondo and Himiko found Jacks body in the gym. His body was hanging from a climbing rope. The three of them activated the Body Discovery Announcement through their PDAs.")
 do show_evidence("res://evidence/panty.png")
 [color=lime]Evidence "Body Discovery" added.[/color]
 do hide_evidence()
