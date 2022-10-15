@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 
 @export var response_template: Node
@@ -187,3 +187,5 @@ func _on_margin_resized() -> void:
 		balloon.custom_minimum_size.y = margin.size.y
 		# Force a resize on only the height
 		balloon.size.y = 0
+		var viewport_size = balloon.get_viewport_rect().size
+		balloon.global_position = Vector2((viewport_size.x - balloon.size.x) * 0.5, viewport_size.y - balloon.size.y)

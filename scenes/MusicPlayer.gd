@@ -21,4 +21,9 @@ func create_song(song: AudioStream, duration = 1.0):
 
 func play_music(song: AudioStream, duration = 1.0):
 	fadeout_previous(duration)
+	if song == null:
+		return
 	create_song(song, duration)
+
+func stop_music(duration = 1.0):
+	fadeout_previous(duration)

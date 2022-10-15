@@ -67,7 +67,7 @@ else:
 	do change_bg("res://backgrounds/ct/3.png")
 	do change_sprite("res://characters/hajime/Firm.png")
 	Hajime: That's wrong! Two people were in the library the entire time, and they never testified to seeing you!
-	do flash()
+	do effect("Flash")
 	do change_bg("res://backgrounds/ct/1.png")
 	do change_sprite("res://characters/byakuya/Shocked.png")
 	do sfx("res://sounds/drama.wav")

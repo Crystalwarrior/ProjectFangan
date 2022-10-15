@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://da674by4teqsy"
+path="res://.godot/imported/[CC] Sumo Seal.ogg-44d4ffc2a037de0d4da83fbfdbfa497d.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/[CC] Sumo Seal.ogg"
+dest_files=["res://.godot/imported/[CC] Sumo Seal.ogg-44d4ffc2a037de0d4da83fbfdbfa497d.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=13.755
+bpm=0.0
+beat_count=0
+bar_beats=4

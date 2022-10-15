@@ -9,6 +9,7 @@ extends Node
 @export var char_sprite: Sprite2D
 @export var foreground: Sprite2D
 @export var effect_player: AnimationPlayer
+@export var evidence_player: AnimationPlayer
 @export var dialog_bubble: Node
 @export var statement_indicator: Control
 @export var evidence_button: Button
@@ -69,6 +70,10 @@ func change_music(path: String):
 	music_player.play_music(load(path))
 
 
+func stop_music():
+	music_player.stop_music()
+
+
 func set_statements(number: int):
 	statement_indicator.set_statements(number)
 
@@ -120,7 +125,15 @@ func _on_dialog_bubble_choice_hover(id):
 	pass
 
 
-# TODO: Generalize this into a proper effects system
-func flash():
-	effect_player.play("Flash")
+func effect(effect: String):
+	effect_player.play(effect)
+
+
+func show_evidence(evidence_image: String):
+	evidence_player.get_node("EvidenceImage").texture = load(evidence_image)
+	evidence_player.play("show")
+
+
+func hide_evidence():
+	evidence_player.play("hide")
 

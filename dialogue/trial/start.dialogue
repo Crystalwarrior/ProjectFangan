@@ -2,6 +2,11 @@
 do add_evidence("Evidence 1", "res://evidence/bg2x.png", "haha hello")
 do add_evidence("Evidence 2", "res://evidence/bg2x.png", "cw is [shake rate=20 level=10]epic[/shake]")
 do add_evidence("Library", "res://evidence/bg2x.png", "Nagito and Naegi were in the Library the entire time. They saw no one else.")
+do stop_music()
+do effect("black")
+do change_sprite("res://characters/monokuma/Normal.png")
+do change_bg("res://backgrounds/ct/judgestand.png")
+do change_fg("res://backgrounds/ct/shade.png")
 
 Skip to testimony?
 - yes
@@ -9,8 +14,8 @@ Skip to testimony?
 	=> END
 - no
 
+do effect("fadein")
 do change_music("res://music/[DCS] Gloomy Underpass.ogg")
-do change_sprite("res://characters/monokuma/Normal.png")
 Monokuma: Ahem![wait=0.5] Now then,[wait=0.2] let's begin with a basic explanation of the class trial!
 do change_sprite("res://characters/monokuma/Headtilt.png")
 Monokuma: During the trial you'll present your arguments for who the culprit is, and vote for "[color=orange][b]whodunnit[/b][/color]."
