@@ -1,4 +1,10 @@
+# Summary:
+# Everyone starts talking about the body. Kirumi brings up a question how Nagito's body was found.
+# Junko, Mondo and Himiko found the body together. Hajime takes a note of it, that note is added to evidence.
+#
+
 ~ Start
+
 do change_music("res://music/[T5] Mode Select.ogg")
 do change_bg("res://backgrounds/ct/3.png")
 do change_sprite("res://characters/angie/ex/Perplexed.png")
@@ -35,7 +41,7 @@ Kirumi: Please don't get aggresive with one another, we need to work together on
 
 do change_bg("res://backgrounds/ct/3.png")
 do change_sprite("res://characters/ibuki/Thinking.png")
-Ibuki: I'll try my best to help out. We can rule out Nagito jumping into the hoop himself, right?
+Ibuki: I'll try my best to help out. We can rule out Nagito hanging himself, right?
 
 do change_bg("res://backgrounds/ct/1.png")
 do change_sprite("res://characters/makoto/dumbfounded.png")
@@ -67,7 +73,7 @@ Byakuya: Testify. Now.
 do effect("ScreenFlash")
 do change_bg("res://backgrounds/ct/3.png")
 do change_sprite("res://characters/junko/Restless.png")
-Junko: Alright, asshole. It was hanging from a rope at the gym, eyes almost popping out. I would know, I was the first to find the body.
+Junko: Alright, asshole. Nagito was hanging from a climbing rope at the gym, eyes almost popping out. I would know, I was the first to find the body.
 
 do change_bg("res://backgrounds/ct/1.png")
 do change_sprite("res://characters/mondo/normal.png")
@@ -84,3 +90,25 @@ Hajime: So you were together with Junko and Mondo?
 do change_bg("res://backgrounds/ct/2.png")
 do change_sprite("res://characters/himiko/lookdownsad.png")
 Himiko: ...*nods*.
+
+do change_bg("res://backgrounds/ct/1.png")
+do change_sprite("res://characters/mondo/thinking.png")
+Mondo: All three of us triggered the Body Discovery Announcement on our PDA's after we snapped out of it.
+
+do change_bg("res://backgrounds/ct/3.png")
+do change_sprite("res://characters/hajime/Thinking.png")
+Hajime: [color=aqua](So the three of them can back each other up. I should note that down in my evidence.)[/color]
+
+do add_evidence("Body Discovery", "res://evidence/pda.png", "Junko, Mondo and Himiko found Nagito's body in the gym. His body was hanging from a climbing rope. The three of them activated the Body Discovery Announcement through their PDA's.")
+do show_evidence("res://evidence/panty.png")
+[color=lime]Evidence "Body Discovery" added.[/color]
+do hide_evidence()
+[next=0.3]
+
+do change_bg("res://backgrounds/ct/3.png")
+do change_sprite("res://characters/byakuya/Tell Them Naegi.png")
+Byakuya: Good. We're finally making progress. Now, speak about the body itself.
+
+do change_bg("res://backgrounds/ct/2.png")
+do change_sprite("res://characters/himiko/lookdownsad.png")
+Himiko: ....
