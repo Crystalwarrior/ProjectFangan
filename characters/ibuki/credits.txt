@@ -1,0 +1,6 @@
+# base game rips, buttons and char.ini cleaned up, re-drawn, and prepared for Killing Fever Online by Minx#5039
+Sprite Edits by: Gentle-Gelatin and ??? (If anyone knows where the expressions for Ibuki_C of Danganronpa Online came from, please contact Crystal!)
+Sprite Edits named, composed, centered, frankensteined, and buttoned by Crystal#5638
+Zoom Composed & Buttoned by: Crystal, Infinity and Beyond, & Fantos
+
+This rip aims to be the highest quality possible on AO2 and in general. No downscaling or upscaling was applied nor necessary with any AO version starting with 2.8. This file *must* be located in the same folder as the character's char.ini - removing attribution will be immediately noticed. It is easy to discover stolen sprites.

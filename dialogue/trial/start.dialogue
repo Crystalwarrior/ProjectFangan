@@ -14,6 +14,7 @@ Skip to testimony?
 	=> END
 - no
 
+
 do effect("fadein")
 do change_music("res://music/[DCS] Gloomy Underpass.ogg")
 Monokuma: Ahem![wait=0.5] Now then,[wait=0.2] let's begin with a basic explanation of the class trial!

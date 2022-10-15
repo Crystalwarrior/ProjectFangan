@@ -1,5 +1,9 @@
 ~ start
-
+Skip to discussion 1?
+- yes
+	do start_dialogue("res://dialogue/trial/discussion_1.dialogue", "Start")
+	=> END
+- no
 do change_bg("res://backgrounds/black.png")
 do effect("fadein")
 do change_sprite("res://characters/hajime/ex/serious.png")

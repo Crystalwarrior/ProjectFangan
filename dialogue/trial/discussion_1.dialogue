@@ -1,11 +1,86 @@
-~ this_is_a_node_title
+~ Start
+do change_music("res://music/[T5] Mode Select.ogg")
+do change_bg("res://backgrounds/ct/3.png")
+do change_sprite("res://characters/angie/ex/Perplexed.png")
+Angie: I can't believe we're actually doing this...
 
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => this_is_a_node_title
-- End the conversation => END
-Nathan: For more information see the online documentation.
+do change_bg("res://backgrounds/ct/1.png")
+do change_sprite("res://characters/yasuhiro/sigh.png")
+Yasuhiro: Where do we even start? Last night was a clusterfuck.
+
+do change_bg("res://backgrounds/ct/2.png")
+do change_sprite("res://characters/tenko/condifent2.png")
+Tenko: I guess we should look into how we found the body?
+
+do change_bg("res://backgrounds/ct/1.png")
+do change_sprite("res://characters/maki/Thinking.png")
+Maki: Might as well, I was wondering how did it even get there.
+
+do change_bg("res://backgrounds/ct/1.png")
+do change_sprite("res://characters/Keebo/nervous.png")
+Kiibo: Well someone put it there of course, dead bodies don't get hanged on their own.
+
+do change_bg("res://backgrounds/ct/3.png")
+do change_sprite("res://characters/byakuya/Contempt.png")
+Byakuya: As if we couldn't tell that on our own. Anything more to add, imbecile?
+
+do change_bg("res://backgrounds/ct/1.png")
+do change_sprite("res://characters/Keebo/nervous2.png")
+do sfx("res://sounds/gloom.wav")
+Kiibo: I'm just trying to help out...
+
+do change_bg("res://backgrounds/ct/2.png")
+do change_sprite("res://characters/kirumi/point.png")
+Kirumi: Please don't get aggresive with one another, we need to work together on this.
+
+do change_bg("res://backgrounds/ct/3.png")
+do change_sprite("res://characters/ibuki/Thinking.png")
+Ibuki: I'll try my best to help out. We can rule out Nagito jumping into the hoop himself, right?
+
+do change_bg("res://backgrounds/ct/1.png")
+do change_sprite("res://characters/makoto/dumbfounded.png")
+Makoto: I'm not sure we can... But it's kind of a crazy idea.[wait=0.5] It's safe to assume the killer did that to him. Either way, we know it can't be suicide due to Monokuma's rules.
+
+do change_bg("res://backgrounds/ct/2.png")
+do change_sprite("res://characters/kirumi/explain.png")
+Kirumi: Can someone explain in detail how was the body of Nagito found?
+
+do change_bg("res://backgrounds/ct/1.png")
+do change_sprite("res://characters/teruteru/Uneasy.png")
+Teruteru: Why? Don't we all know how it was?
+
+do change_bg("res://backgrounds/ct/3.png")
+do change_sprite("res://characters/mahiru/distressed.png")
+Mahiru: I... couldn't look... It was a bit too much for me, I'm not sure I can do this...
+
+do change_sprite("res://characters/teruteru/Worried.png")
+Teruteru: I don't even want to think about it, makes me sick.
+
+do change_bg("res://backgrounds/ct/2.png")
+do change_sprite("res://characters/kirumi/thinking.png")
+Kirumi: I just want to make sure everyone is on the same page. I don't know what you know, and I'm sure you don't know what I know either.
+
+do change_bg("res://backgrounds/ct/3.png")
+do change_sprite("res://characters/byakuya/Tell Them Naegi.png")
+Byakuya: Testify. Now.
+
+do effect("ScreenFlash")
+do change_bg("res://backgrounds/ct/3.png")
+do change_sprite("res://characters/junko/Restless.png")
+Junko: Alright, asshole. It was hanging from a rope at the gym, eyes almost popping out. I would know, I was the first to find the body.
+
+do change_bg("res://backgrounds/ct/1.png")
+do change_sprite("res://characters/mondo/normal.png")
+Mondo: I can back Junko up, I was right behind her when we first found the body.
+
+do change_bg("res://backgrounds/ct/2.png")
+do change_sprite("res://characters/himiko/lookdownsad.png")
+Himiko: ...I was the third...
+
+do change_bg("res://backgrounds/ct/3.png")
+do change_sprite("res://characters/hajime/Explanation.png")
+Hajime: So you were together with Junko and Mondo?
+
+do change_bg("res://backgrounds/ct/2.png")
+do change_sprite("res://characters/himiko/lookdownsad.png")
+Himiko: ...*nods*.

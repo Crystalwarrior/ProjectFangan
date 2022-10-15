@@ -1,0 +1,7 @@
+Ripped by Minx#5039
+Base game sprites named, composed, centered, buttoned by Miles Per Hour
+
+Credit to Dual Destinies developers for the char_icon background.
+Credit to Danganronpa franchise for character design, name, art and assets.
+
+This rip aims to be the highest quality possible on AO2 and in general. No downscaling or upscaling was applied nor necessary with any AO version starting with 2.8. You may use these for any purpose that does not infringe on the copyright of the rights owners. This file *must* be located in the same folder as the character's char.ini - removing attribution will be immediately noticed. It is easy to discover stolen sprites.
