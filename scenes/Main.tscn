@@ -1,12 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://bx53owtx2ilno"]
+[gd_scene load_steps=22 format=3 uid="uid://t7uv0yare4un"]
 
 [ext_resource type="Script" path="res://scenes/Main.gd" id="1_um2e6"]
-[ext_resource type="Resource" uid="uid://dii1sef61ys8y" path="res://dialogue/trial/investigation_summary.dialogue" id="2_2bcjh"]
+[ext_resource type="Resource" uid="uid://dii1sef61ys8y" path="res://dialogue/trial/summary.dialogue" id="2_sic82"]
 [ext_resource type="PackedScene" uid="uid://c6ntc6rlqskex" path="res://scenes/DialogBubble.tscn" id="3_05j2k"]
-[ext_resource type="Texture2D" uid="uid://diyvgvtitk2t3" path="res://characters/hajime/Neutral.png" id="4_4onwr"]
-[ext_resource type="AudioStream" uid="uid://dv7mgvison758" path="res://sounds/evidence_up.wav" id="5_10md3"]
 [ext_resource type="Texture2D" uid="uid://gy2hydf0akkh" path="res://evidence/bg2x.png" id="5_a5kkb"]
-[ext_resource type="AudioStream" uid="uid://dmh5ffadg82cd" path="res://sounds/evidence_down.wav" id="6_d0xvi"]
 [ext_resource type="PackedScene" path="res://scenes/MusicPlayer.tscn" id="7_1shgo"]
 [ext_resource type="Script" path="res://scenes/StatementIndicator.gd" id="8_lm432"]
 [ext_resource type="PackedScene" uid="uid://cavrlxxlb1wkk" path="res://scenes/EvidenceScreen.tscn" id="9_3qwbu"]
@@ -126,30 +123,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0, 72), Vector2(-368, 72)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("EvidencePlayer/EvidenceSFX:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.1),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("EvidencePlayer/EvidenceSFX:stream")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("6_d0xvi")]
-}
 
 [sub_resource type="Animation" id="Animation_u7m4r"]
 resource_name = "show"
@@ -166,41 +139,85 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(-368, 72), Vector2(0, 72)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("EvidencePlayer/EvidenceSFX:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.1),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+
+[sub_resource type="Animation" id="Animation_nvuj8"]
+resource_name = "show_right"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EvidencePlayer/EvidenceImage:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(3, 1),
+"update": 0,
+"values": [Vector2(960, 72), Vector2(592, 72)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("EvidencePlayer/EvidenceSFX:stream")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("5_10md3")]
+
+[sub_resource type="Animation" id="Animation_1mqj3"]
+resource_name = "hide_right"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EvidencePlayer/EvidenceImage:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(3, 1),
+"update": 0,
+"values": [Vector2(592, 72), Vector2(960, 72)]
+}
+
+[sub_resource type="Animation" id="Animation_jwx1q"]
+resource_name = "show_center"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EvidencePlayer/EvidenceImage:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(3, 1),
+"update": 0,
+"values": [Vector2(-368, 72), Vector2(296, 72)]
+}
+
+[sub_resource type="Animation" id="Animation_08nfa"]
+resource_name = "hide_center"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EvidencePlayer/EvidenceImage:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(3, 1),
+"update": 0,
+"values": [Vector2(296, 72), Vector2(960, 72)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_g0kti"]
 _data = {
 "RESET": SubResource("Animation_lh452"),
-"hide": SubResource("Animation_xhibd"),
-"show": SubResource("Animation_u7m4r")
+"hide_center": SubResource("Animation_08nfa"),
+"hide_left": SubResource("Animation_xhibd"),
+"hide_right": SubResource("Animation_1mqj3"),
+"show_center": SubResource("Animation_jwx1q"),
+"show_left": SubResource("Animation_u7m4r"),
+"show_right": SubResource("Animation_nvuj8")
 }
 
 [node name="Main" type="Node" node_paths=PackedStringArray("music_player", "sfx_player", "background", "char_sprite", "foreground", "effect_player", "evidence_player", "dialog_bubble", "statement_indicator", "evidence_button", "evidence_screen")]
 script = ExtResource("1_um2e6")
-dialogue_resource = ExtResource("2_2bcjh")
+dialogue_resource = ExtResource("2_sic82")
 dialogue_title = "start"
 music_player = NodePath("MusicPlayer")
 sfx_player = NodePath("SFXPlayer")
@@ -230,7 +247,6 @@ metadata/_edit_lock_ = true
 
 [node name="CharSprite" type="Sprite2D" parent="."]
 position = Vector2(480, 270)
-texture = ExtResource("4_4onwr")
 metadata/_edit_lock_ = true
 
 [node name="Foreground" type="Sprite2D" parent="."]
@@ -271,9 +287,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_a5kkb")
 ignore_texture_size = true
-
-[node name="EvidenceSFX" type="AudioStreamPlayer" parent="EvidencePlayer"]
-stream = ExtResource("5_10md3")
 
 [node name="DialogBubble" parent="." instance=ExtResource("3_05j2k")]
 

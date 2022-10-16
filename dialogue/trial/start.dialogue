@@ -8,13 +8,6 @@ do change_sprite("res://characters/monokuma/Normal.png")
 do change_bg("res://backgrounds/ct/judgestand.png")
 do change_fg("res://backgrounds/ct/shade.png")
 
-Skip to testimony?
-- yes
-	do start_dialogue("res://dialogue/trial/debate_1.dialogue", "start")
-	=> END
-- no
-
-
 do effect("fadein")
 do change_music("res://music/[DCS] Gloomy Underpass.ogg")
 Monokuma: Ahem![wait=0.5] Now then,[wait=0.2] let's begin with a basic explanation of the class trial!
@@ -41,7 +34,7 @@ Monokuma: Now, a quick question.[wait=0.5] Who is the protagonist of Danganronpa
 	do change_sprite("res://characters/monokuma/Bashful.png")
 	do sfx("res://sounds/reveal.wav")
 	Monokuma: [wave amp=25 freq=5]That's correct! You got it right![/wave] [wait=0.5]He's such a loser, though!
-	do start_dialogue("res://dialogue/trial/debate_1.dialogue", "start")
+	do start_dialogue("res://dialogue/trial/discussion_1.dialogue", "start")
 	=> END
 - Hajime Hinata
 	do change_sprite("res://characters/monokuma/Laugh.png")

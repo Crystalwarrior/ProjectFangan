@@ -3,7 +3,7 @@
 # Junko, Mondo and Himiko found the body together. Hajime takes a note of it, that note is added to evidence.
 #
 
-~ Start
+~ start
 
 do change_music("res://music/[T5] Mode Select.ogg")
 do change_bg("res://backgrounds/ct/3.png")
@@ -103,9 +103,10 @@ do change_sprite("res://characters/hajime/Thinking.png")
 Hajime: [color=aqua](So the three of them can back each other up. I should note that down in my evidence.)[/color]
 
 do add_evidence("Body Discovery", "res://evidence/pda.png", "Junko, Mondo and Himiko found Nagitos body in the gym. His body was hanging from a climbing rope. The three of them activated the Body Discovery Announcement through their PDAs.")
-do show_evidence("res://evidence/pda.png")
-[color=lime]Evidence "Body Discovery" added.[/color]
-do hide_evidence()
+do show_evidence("res://evidence/pda.png", "center")
+do sfx("res://sounds/equip.wav")
+[color=lime][color=orange]"Body Discovery"[/color] has been added to your evidence.[/color]
+do hide_evidence("center")
 [next=0.3]
 
 do change_bg("res://backgrounds/ct/3.png")
@@ -125,17 +126,15 @@ Mondo: By the time we got it down the rest of you had already come, Maki was the
 
 do change_bg("res://backgrounds/ct/1.png")
 do change_sprite("res://characters/maki/Thinking.png")
-Maki: Alright. To begin with there was a rope burn on Nagito's neck, to be expected, but there was also weird bruisings all throughout his body, on his legs, torso, back, etc. 
-
-do change_sprite("res://characters/maki/NeutralSweatTalk.png")
-Maki: He also felt like he was wet but dried up recently, his hair was a little bit damp when I checked it. 
+Maki: Alright. There was a rope burn on Nagito's neck. His neck, spine and limbs could bend in unnatural ways - definitely fractured. We also found burns and bruises all throughout his body.
 
 do change_bg("res://backgrounds/ct/3.png")
 do change_sprite("res://characters/hajime/Thinking.png")
-Hajime: [color=aqua](That's strange, where did all those bruises even come from? I'll have to keep this in mind)[/color]
+Hajime: [color=aqua](Huh, this sounds overkill for a simple hanging. I'll have to keep these details in mind.)[/color]
 
-do add_evidence("Nagito Body Details", "res://evidence/unknownman.png", "Inspected by Mondo and Maki.Large ropeburn on the neck, bruising on various parts of the body. Looks like he was wet before his body was found")
-do show_evidence("res://evidence/unknownman.png")
-[color=lime]Evidence "Nagito Body Details" added.[/color]
-do hide_evidence()
+do add_evidence("Nagito Body Details", "res://evidence/unknownman.png", "Inspected by Mondo and Maki. Rope burn on Nagitos neck. His neck, spine and limbs are fractured. Burns and bruises all throughout his body.")
+do show_evidence("res://evidence/unknownman.png", "center")
+do sfx("res://sounds/equip.wav")
+[color=lime][color=orange]"Nagito Body Details"[/color] has been added to your Evidence.[/color]
+do hide_evidence("center")
 [next=0.3]

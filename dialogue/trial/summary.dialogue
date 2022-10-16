@@ -1,9 +1,15 @@
 ~ start
-Skip to discussion 1?
-- yes
-	do start_dialogue("res://dialogue/trial/discussion_1.dialogue", "Start")
+Skip to a segment?
+- continue
+- trial start
+	do start_dialogue("res://dialogue/trial/start.dialogue", "start")
 	=> END
-- no
+- discussion 1
+	do start_dialogue("res://dialogue/trial/discussion_1.dialogue", "start")
+	=> END
+- circular debate 1
+	do start_dialogue("res://dialogue/trial/debate_1.dialogue", "start")
+	=> END
 do change_bg("res://backgrounds/black.png")
 do effect("fadein")
 do change_sprite("res://characters/hajime/ex/serious.png")
@@ -12,18 +18,8 @@ do change_sprite("res://characters/hajime/Distant.png")
 Hajime: Now, one of us has been[wait=0.5] [do change_sprite("res://characters/hajime/Grit.png")][do change_music("res://music/[CC] Sumo Seal.ogg")][color=red]murdered[/color].
 do change_sprite("res://characters/hajime/Closed.png")
 Hajime: We are forced to determine who is the culprit through the Class Trial, where the survivors will debate to seek the truth.
-Hajime: Before that, we had time to investigate the crime scene, and this is what we discovered.
 do effect("fadeout")
 [next=1.0]
 do change_sprite("")
 do effect("RESET")
-do show_evidence("res://evidence/unknownman.png")
-Hajime: The victim's name is Nagito Komaeda. He has sustained several bruises and scalding burns across the whole body, as well as fractures located in the neck, spinal cord, both elbows and both ankles.
-do hide_evidence()
-[next=0.3]
-do show_evidence("res://evidence/panty.png")
-Hajime: The victim's body was found in the Gym, hanging by the neck from the climbing rope.
-do hide_evidence()
-[next=0.3]
-Hajime: Luhmao anyway I'll just cut to the trial
 do start_dialogue("res://dialogue/trial/start.dialogue", "start")

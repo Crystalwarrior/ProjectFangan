@@ -129,11 +129,11 @@ func effect(effect: String):
 	effect_player.play(effect)
 
 
-func show_evidence(evidence_image: String):
+func show_evidence(evidence_image: String, where: String = "left"):
 	evidence_player.get_node("EvidenceImage").texture = load(evidence_image)
-	evidence_player.play("show")
+	evidence_player.play("show_" + where)
 
 
-func hide_evidence():
-	evidence_player.play("hide")
+func hide_evidence(where: String = "left"):
+	evidence_player.play("hide_" + where)
 
