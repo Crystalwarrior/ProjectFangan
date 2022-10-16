@@ -116,3 +116,26 @@ do change_bg("res://backgrounds/ct/2.png")
 do change_sprite("res://characters/himiko/lookdownsad.png")
 Himiko: ....
 
+do change_bg("res://backgrounds/ct/1.png")
+do change_sprite("res://characters/mondo/annoyed.png")
+Mondo: Like Junko said we found Nagito hanging from that rope like a piñata, it took us a second to calm ourselves but we eventually managed to put the body down. 
+
+do change_sprite("res://characters/mondo/ex/shutdown.png")
+Mondo: By the time we got it down the rest of you had already come, Maki was the one that did the deep examination so I'll let her give you the details, but I can back up what she's saying.
+
+do change_bg("res://backgrounds/ct/1.png")
+do change_sprite("res://characters/maki/Thinking.png")
+Maki: Alright. To begin with there was a rope burn on Nagito's neck, to be expected, but there was also weird bruisings all throughout his body, on his legs, torso, back, etc. 
+
+do change_sprite("res://characters/maki/NeutralSweatTalk.png")
+Maki: He also felt like he was wet but dried up recently, his hair was a little bit damp when I checked it. 
+
+do change_bg("res://backgrounds/ct/3.png")
+do change_sprite("res://characters/hajime/Thinking.png")
+Hajime: [color=aqua](That's strange, where did all those bruises even come from? I'll have to keep this in mind)[/color]
+
+do add_evidence("Nagito Body Details", "res://evidence/unknownman.png", "Inspected by Mondo and Maki.Large ropeburn on the neck, bruising on various parts of the body. Looks like he was wet before his body was found")
+do show_evidence("res://evidence/unknownman.png")
+[color=lime]Evidence "Nagito Body Details" added.[/color]
+do hide_evidence()
+[next=0.3]
