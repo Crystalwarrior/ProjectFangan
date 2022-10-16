@@ -13,7 +13,7 @@ config_version=5
 config/name="Project Fangan"
 run/main_scene="res://scenes/Main.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://dolphinsxx.png"
 
 [autoload]
 
