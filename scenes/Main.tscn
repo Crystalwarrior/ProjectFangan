@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://t7uv0yare4un"]
+[gd_scene load_steps=28 format=3 uid="uid://t7uv0yare4un"]
 
 [ext_resource type="Script" path="res://scenes/Main.gd" id="1_um2e6"]
 [ext_resource type="Resource" uid="uid://dii1sef61ys8y" path="res://dialogue/trial/summary.dialogue" id="2_sic82"]
@@ -7,6 +7,80 @@
 [ext_resource type="PackedScene" path="res://scenes/MusicPlayer.tscn" id="7_1shgo"]
 [ext_resource type="Script" path="res://scenes/StatementIndicator.gd" id="8_lm432"]
 [ext_resource type="PackedScene" uid="uid://cavrlxxlb1wkk" path="res://scenes/EvidenceScreen.tscn" id="9_3qwbu"]
+
+[sub_resource type="Animation" id="Animation_7q1ch"]
+resource_name = "fadeout"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeBackground:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_76ben"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeBackground:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_76wyb"]
+_data = {
+"RESET": SubResource("Animation_76ben"),
+"fadeout": SubResource("Animation_7q1ch")
+}
+
+[sub_resource type="Animation" id="Animation_ptu3b"]
+resource_name = "fadeout"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeSprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FadeSprite:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
+[sub_resource type="Animation" id="Animation_yibhv"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b0ed4"]
+_data = {
+"RESET": SubResource("Animation_yibhv"),
+"fadeout": SubResource("Animation_ptu3b")
+}
 
 [sub_resource type="Animation" id="Animation_o2c1q"]
 resource_name = "Flash"
@@ -108,6 +182,22 @@ tracks/0/keys = {
 "values": [Vector2(-368, 72)]
 }
 
+[sub_resource type="Animation" id="Animation_08nfa"]
+resource_name = "hide_center"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EvidencePlayer/EvidenceImage:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(3, 1),
+"update": 0,
+"values": [Vector2(296, 72), Vector2(960, 72)]
+}
+
 [sub_resource type="Animation" id="Animation_xhibd"]
 resource_name = "hide"
 length = 0.3
@@ -122,38 +212,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(3, 1),
 "update": 0,
 "values": [Vector2(0, 72), Vector2(-368, 72)]
-}
-
-[sub_resource type="Animation" id="Animation_u7m4r"]
-resource_name = "show"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("EvidencePlayer/EvidenceImage:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(3, 1),
-"update": 0,
-"values": [Vector2(-368, 72), Vector2(0, 72)]
-}
-
-[sub_resource type="Animation" id="Animation_nvuj8"]
-resource_name = "show_right"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("EvidencePlayer/EvidenceImage:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(3, 1),
-"update": 0,
-"values": [Vector2(960, 72), Vector2(592, 72)]
 }
 
 [sub_resource type="Animation" id="Animation_1mqj3"]
@@ -188,8 +246,8 @@ tracks/0/keys = {
 "values": [Vector2(-368, 72), Vector2(296, 72)]
 }
 
-[sub_resource type="Animation" id="Animation_08nfa"]
-resource_name = "hide_center"
+[sub_resource type="Animation" id="Animation_u7m4r"]
+resource_name = "show"
 length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -201,7 +259,23 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(3, 1),
 "update": 0,
-"values": [Vector2(296, 72), Vector2(960, 72)]
+"values": [Vector2(-368, 72), Vector2(0, 72)]
+}
+
+[sub_resource type="Animation" id="Animation_nvuj8"]
+resource_name = "show_right"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EvidencePlayer/EvidenceImage:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(3, 1),
+"update": 0,
+"values": [Vector2(960, 72), Vector2(592, 72)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_g0kti"]
@@ -241,13 +315,27 @@ bus = &"SFX"
 position = Vector2(480, 270)
 metadata/_edit_lock_ = true
 
-[node name="Background2" type="Sprite2D" parent="."]
-position = Vector2(480, 270)
+[node name="FadeBackground" type="Sprite2D" parent="Background"]
+modulate = Color(1, 1, 1, 0)
 metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background"]
+libraries = {
+"": SubResource("AnimationLibrary_76wyb")
+}
 
 [node name="CharSprite" type="Sprite2D" parent="."]
 position = Vector2(480, 270)
 metadata/_edit_lock_ = true
+
+[node name="FadeSprite" type="Sprite2D" parent="CharSprite"]
+modulate = Color(1, 1, 1, 0)
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharSprite"]
+libraries = {
+"": SubResource("AnimationLibrary_b0ed4")
+}
 
 [node name="Foreground" type="Sprite2D" parent="."]
 position = Vector2(480, 270)

@@ -46,6 +46,8 @@ func start_dialogue(path: String, title: String):
 	dialog_bubble.start(load(path), title)
 
 func change_sprite(path: String):
+	char_sprite.get_node("FadeSprite").texture = char_sprite.texture
+	char_sprite.get_node("AnimationPlayer").play("fadeout")
 	if path == "":
 		char_sprite.texture = null
 		return
@@ -53,6 +55,8 @@ func change_sprite(path: String):
 
 
 func change_bg(path: String):
+	background.get_node("FadeBackground").texture = background.texture
+	background.get_node("AnimationPlayer").play("fadeout")
 	if path == "":
 		background.texture = null
 		return
@@ -125,8 +129,8 @@ func _on_dialog_bubble_choice_hover(id):
 	pass
 
 
-func effect(effect: String):
-	effect_player.play(effect)
+func effect(fx: String):
+	effect_player.play(fx)
 
 
 func show_evidence(evidence_image: String, where: String = "left"):

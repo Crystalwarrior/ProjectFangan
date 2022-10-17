@@ -19,7 +19,8 @@ Hajime: Now, one of us has been[wait=0.5] [do change_sprite("res://characters/ha
 do change_sprite("res://characters/hajime/Closed.png")
 Hajime: We are forced to determine who is the culprit through the Class Trial, where the survivors will debate to seek the truth.
 do effect("fadeout")
-[next=1.0]
+[next=0.5]
 do change_sprite("")
+[next=0.5]
 do effect("RESET")
 do start_dialogue("res://dialogue/trial/start.dialogue", "start")
