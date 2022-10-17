@@ -138,3 +138,4 @@ do sfx("res://sounds/equip.wav")
 [color=lime][color=orange]"Nagito Body Details"[/color] has been added to your Evidence.[/color]
 do hide_evidence("center")
 [next=0.3]
+do start_dialogue("res://dialogue/trial/debate_1.dialogue", "start")

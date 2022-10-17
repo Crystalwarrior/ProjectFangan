@@ -1,7 +1,4 @@
 ~ start
-do add_evidence("Evidence 1", "res://evidence/bg2x.png", "haha hello")
-do add_evidence("Evidence 2", "res://evidence/bg2x.png", "cw is [shake rate=20 level=10]epic[/shake]")
-do add_evidence("Library", "res://evidence/bg2x.png", "Nagito and Naegi were in the Library the entire time. They saw no one else.")
 do stop_music()
 do effect("black")
 do change_sprite("res://characters/monokuma/Normal.png")
