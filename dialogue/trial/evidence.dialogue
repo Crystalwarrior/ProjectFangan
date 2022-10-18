@@ -1,0 +1,19 @@
+# Obtained during discussion_1.dialogue
+~ body_discovery
+do add_evidence("Body Discovery", "res://evidence/pda.png", "Junko, Mondo and Himiko found Nagitos body in the gym. His body was hanging from a climbing rope. The three of them activated the Body Discovery Announcement through their PDAs.")
+do show_evidence("res://evidence/pda.png", "center")
+do sfx("res://sounds/equip.wav")
+[color=lime][color=orange]"Body Discovery"[/color] has been added to your evidence.[/color]
+do hide_evidence("center")
+[next=0.3]
+=> END
+
+# Obtained during discussion_1.dialogue
+~ nagito_body_details
+do add_evidence("Nagito Body Details", "res://evidence/unknownman.png", "Inspected by Mondo and Maki. Rope burn on Nagitos neck. His neck, spine and limbs are fractured. Burns and bruises all throughout his body.")
+do show_evidence("res://evidence/unknownman.png", "center")
+do sfx("res://sounds/equip.wav")
+[color=lime][color=orange]"Nagito Body Details"[/color] has been added to your Evidence.[/color]
+do hide_evidence("center")
+[next=0.3]
+=> END

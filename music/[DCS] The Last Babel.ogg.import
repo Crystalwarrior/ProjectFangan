@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://fimu6xvc1m2b"
+path="res://.godot/imported/[DCS] The Last Babel.ogg-e52642016d999afbc47edac4db9a2aa9.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/[DCS] The Last Babel.ogg"
+dest_files=["res://.godot/imported/[DCS] The Last Babel.ogg-e52642016d999afbc47edac4db9a2aa9.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.5
+bpm=0.0
+beat_count=0
+bar_beats=4

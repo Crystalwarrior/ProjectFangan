@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bewocqor32wf2"
+path="res://.godot/imported/[UNIB] Paradox Altar.ogg-1afdbf19787017e25489afa5b6cbb23c.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/[UNIB] Paradox Altar.ogg"
+dest_files=["res://.godot/imported/[UNIB] Paradox Altar.ogg-1afdbf19787017e25489afa5b6cbb23c.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=4.799
+bpm=0.0
+beat_count=0
+bar_beats=4

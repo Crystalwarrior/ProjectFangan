@@ -33,6 +33,23 @@ func add_evidence(evi_name: String, evi_image: String, evi_desc: String):
 	evidence_list.add_item(evi["name"], load(evi["image"]))
 
 
+func update_evidence(evi_name: String, evi_image: String = "", evi_desc: String = ""):
+	for evi in evidence_array:
+		if evi["name"] == evi_name:
+			if evi_image != "":
+				evi["image"] = evi_image
+			if evi_desc != "":
+				evi["desc"] = evi_desc
+			break
+
+
+func rename_evidence(evi_name: String, evi_rename: String):
+	for evi in evidence_array:
+		if evi["name"] == evi_name:
+			evi["name"] = evi_rename
+			break
+
+
 func remove_evidence(evi_name: String):
 	for i in range(evidence_array.size()):
 		var evi = evidence_array[i]
@@ -67,11 +84,13 @@ func _on_item_selected(idx: int):
 	sfx_player.stream = sfx_scroll
 	sfx_player.play()
 
+
 func _on_back_pressed():
 	set_visible(false)
 	emit_signal("back_pressed")
 	sfx_player.stream = sfx_paper_down
 	sfx_player.play()
+
 
 func _on_present_pressed():
 	set_visible(false)

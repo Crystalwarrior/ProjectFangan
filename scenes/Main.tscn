@@ -8,6 +8,21 @@
 [ext_resource type="Script" path="res://scenes/StatementIndicator.gd" id="8_lm432"]
 [ext_resource type="PackedScene" uid="uid://cavrlxxlb1wkk" path="res://scenes/EvidenceScreen.tscn" id="9_3qwbu"]
 
+[sub_resource type="Animation" id="Animation_76ben"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeBackground:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_7q1ch"]
 resource_name = "fadeout"
 length = 0.3
@@ -24,26 +39,14 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_76ben"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("FadeBackground:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_76wyb"]
 _data = {
 "RESET": SubResource("Animation_76ben"),
 "fadeout": SubResource("Animation_7q1ch")
 }
+
+[sub_resource type="Animation" id="Animation_yibhv"]
+length = 0.001
 
 [sub_resource type="Animation" id="Animation_ptu3b"]
 resource_name = "fadeout"
@@ -72,9 +75,6 @@ tracks/1/keys = {
 "update": 1,
 "values": [null]
 }
-
-[sub_resource type="Animation" id="Animation_yibhv"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b0ed4"]
 _data = {

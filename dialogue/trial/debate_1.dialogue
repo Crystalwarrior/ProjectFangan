@@ -1,12 +1,9 @@
 ~ start
-do add_evidence("Evidence 1", "res://evidence/bg2x.png", "haha hello")
-do add_evidence("Evidence 2", "res://evidence/bg2x.png", "cw is [shake rate=20 level=10]epic[/shake]")
-do add_evidence("Library", "res://evidence/bg2x.png", "Nagito and Naegi were in the Library the entire time. They saw no one else.")
-do change_music("res://music/[BR] The Legend of Mae (Progressive Trance Mix).ogg")
-do change_sprite("res://characters/byakuya/Disgusted.png")
-do change_bg("res://backgrounds/ct/1.png")
+do change_music("res://music/[DCS] The Last Babel.ogg")
+do change_sprite("res://characters/himiko/point.png")
+do change_bg("res://backgrounds/ct/2.png")
 do change_fg("res://backgrounds/ct/stand.png")
-Byakuya: That's enough. We have testimony to go through.
+Himiko: I'll start...
 
 ~ statement_1
 if get_flag("tutorial_seen") == "2"
@@ -16,8 +13,8 @@ if get_flag("tutorial_seen") == "2"
 	do previous_line("statement_3")
 
 do change_bg("res://backgrounds/ct/1.png")
-do change_sprite("res://characters/byakuya/Disgusted.png")
-Byakuya: At the time of the murder, I was reading a book in the study by myself.
+do change_sprite("res://characters/himiko/lookdownfinger.png")
+Himiko: So I was going to the gym at night, minding my own business, when I saw Mr.Teruteru Hanemura out and about inside the gym.
 if get_flag("tutorial_seen") == "1"
 	=> tutorial
 

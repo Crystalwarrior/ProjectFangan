@@ -98,6 +98,27 @@ func add_evidence(evi_name: String, evi_image: String, evi_desc: String):
 	evidence_screen.add_evidence(evi_name, evi_image, evi_desc)
 
 
+func update_evidence(evi_name: String, evi_image: String, evi_desc: String):
+	evidence_screen.update_evidence(evi_name, evi_image, evi_desc)
+
+
+func rename_evidence(evi_name: String, evi_rename: String):
+	evidence_screen.rename_evidence(evi_name, evi_rename)
+
+
+func effect(fx: String):
+	effect_player.play(fx)
+
+
+func show_evidence(evidence_image: String, where: String = "left"):
+	evidence_player.get_node("EvidenceImage").texture = load(evidence_image)
+	evidence_player.play("show_" + where)
+
+
+func hide_evidence(where: String = "left"):
+	evidence_player.play("hide_" + where)
+
+
 # Signals
 
 
@@ -127,17 +148,3 @@ func _on_dialog_bubble_input_choice(id):
 
 func _on_dialog_bubble_choice_hover(id):
 	pass
-
-
-func effect(fx: String):
-	effect_player.play(fx)
-
-
-func show_evidence(evidence_image: String, where: String = "left"):
-	evidence_player.get_node("EvidenceImage").texture = load(evidence_image)
-	evidence_player.play("show_" + where)
-
-
-func hide_evidence(where: String = "left"):
-	evidence_player.play("hide_" + where)
-

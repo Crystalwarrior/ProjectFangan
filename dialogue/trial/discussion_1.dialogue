@@ -3,6 +3,8 @@
 # Junko, Mondo and Himiko found the body together. Hajime takes a note of it, that note is added to evidence.
 #
 
+import "res://dialogue/trial/evidence.dialogue" as evidence
+
 ~ start
 
 do change_music("res://music/[T5] Mode Select.ogg")
@@ -71,6 +73,10 @@ do change_bg("res://backgrounds/ct/3.png")
 do change_sprite("res://characters/byakuya/Disgusted.png")
 Byakuya: I'm sick of this. How was Nagito found?[wait=0.5] Testify!
 
+Angie:...
+
+Tenko:...
+
 do change_music("res://music/[BR] The Legend of Mae (Progressive Trance Mix).ogg")
 do sfx("res://sounds/ding.wav")
 do effect("Flash")
@@ -102,12 +108,7 @@ do change_bg("res://backgrounds/ct/3.png")
 do change_sprite("res://characters/hajime/Thinking.png")
 Hajime: [color=aqua](So the three of them can back each other up. I should note that down in my evidence.)[/color]
 
-do add_evidence("Body Discovery", "res://evidence/pda.png", "Junko, Mondo and Himiko found Nagitos body in the gym. His body was hanging from a climbing rope. The three of them activated the Body Discovery Announcement through their PDAs.")
-do show_evidence("res://evidence/pda.png", "center")
-do sfx("res://sounds/equip.wav")
-[color=lime][color=orange]"Body Discovery"[/color] has been added to your evidence.[/color]
-do hide_evidence("center")
-[next=0.3]
+=>< evidence/body_discovery
 
 do change_bg("res://backgrounds/ct/3.png")
 do change_sprite("res://characters/byakuya/Tell Them Naegi.png")
@@ -132,10 +133,39 @@ do change_bg("res://backgrounds/ct/3.png")
 do change_sprite("res://characters/hajime/Thinking.png")
 Hajime: [color=aqua](Huh, this sounds overkill for a simple hanging. I'll have to keep these details in mind.)[/color]
 
-do add_evidence("Nagito Body Details", "res://evidence/unknownman.png", "Inspected by Mondo and Maki. Rope burn on Nagitos neck. His neck, spine and limbs are fractured. Burns and bruises all throughout his body.")
-do show_evidence("res://evidence/unknownman.png", "center")
-do sfx("res://sounds/equip.wav")
-[color=lime][color=orange]"Nagito Body Details"[/color] has been added to your Evidence.[/color]
-do hide_evidence("center")
-[next=0.3]
+=>< evidence/nagito_body_details
+
+Himiko: I saw...
+
+Hajime: Huh? You saw..? What did you see, Himiko?
+
+do stop_music()
+do change_bg("res://backgrounds/ct/2.png")
+do change_sprite("res://characters/himiko/serious.png")
+Himiko: I saw...[wait=0.5] [do change_sprite("res://characters/himiko/shoutingmad.png")][do change_music("res://music/[UNIB] Paradox Altar.ogg")][color=red]the culprit![/color]
+
+Hajime: WHAT?!
+
+Himiko: Yes!![wait=0.2] I know who did it![wait=0.2] [shake rate=20 level=5]Teruteru,[wait=0.2] you were in the gym before we showed up![/shake]
+
+Teruteru: Hey uh,[wait=0.2] what?[wait=0.2] Hold on a second...
+
+Mondo: Hey!! Himiko, you didn't tell us about this!
+
+Junko: ...Well...
+
+Junko: I uh...[wait=0.5] I think I know what Himiko is referring to![wait=0.2] Yeah![wait=0.2] [shake rate=20 level=10]Teruteru's the culprit![/shake]
+
+Mondo: Ex[shake rate=20 level=5]-fuckin-[/shake]scuse me!?
+
+Hajime: ...Uh...
+
+Tenko: You should have started out with that! 
+
+Yasuhiro: Wow, I didn't think our first trial would be so short.
+
+Teruteru: W-W-Wait guys! She hasn't even said anything! I'm not the culprit!
+
+Angie: Y-Yeah we should slow down and hear the details.
+
 do start_dialogue("res://dialogue/trial/debate_1.dialogue", "start")
