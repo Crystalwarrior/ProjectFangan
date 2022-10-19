@@ -1,15 +1,16 @@
 ~ start
-Skip to a segment?
-- continue
-- trial start
-	do start_dialogue("res://dialogue/trial/start.dialogue", "start")
-	=> END
-- discussion 1
-	do start_dialogue("res://dialogue/trial/discussion_1.dialogue", "start")
-	=> END
-- circular debate 1
-	do start_dialogue("res://dialogue/trial/debate_1.dialogue", "start")
-	=> END
+if debug
+	Skip to a segment?
+	- continue
+	- trial start
+		do start_dialogue("res://dialogue/trial/start.dialogue", "start")
+		=> END
+	- discussion 1
+		do start_dialogue("res://dialogue/trial/discussion_1.dialogue", "start")
+		=> END
+	- circular debate 1
+		do start_dialogue("res://dialogue/trial/debate_1.dialogue", "start")
+		=> END
 do change_bg("res://backgrounds/black.png")
 do effect("fadein")
 do change_sprite("res://characters/hajime/ex/serious.png")

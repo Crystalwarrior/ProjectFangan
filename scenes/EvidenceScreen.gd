@@ -27,7 +27,18 @@ func _ready():
 	present_button.pressed.connect(_on_present_pressed)
 
 
+func find_evidence(evi_name: String):
+	for i in range(evidence_array.size()):
+		var evi = evidence_array[i]
+		if evi_name == evi["name"]:
+			return i
+	return -1
+
+
 func add_evidence(evi_name: String, evi_image: String, evi_desc: String):
+	if find_evidence(evi_name) != -1:
+		print("Warning: tried to add evidence when evidence of the same name already exists")
+		return
 	var evi: Dictionary = {"name": evi_name, "image": evi_image, "desc": evi_desc}
 	evidence_array.append(evi)
 	evidence_list.add_item(evi["name"], load(evi["image"]))
@@ -40,14 +51,16 @@ func update_evidence(evi_name: String, evi_image: String = "", evi_desc: String 
 				evi["image"] = evi_image
 			if evi_desc != "":
 				evi["desc"] = evi_desc
-			break
+			return
+	print("Warning: tried to update evidence that doesn't exist")
 
 
 func rename_evidence(evi_name: String, evi_rename: String):
 	for evi in evidence_array:
 		if evi["name"] == evi_name:
 			evi["name"] = evi_rename
-			break
+			return
+	print("Warning: tried to rename evidence that doesn't exist")
 
 
 func remove_evidence(evi_name: String):
@@ -56,7 +69,8 @@ func remove_evidence(evi_name: String):
 		if evi["name"] == evi_name:
 			evidence_array.remove_at(i)
 			evidence_list.remove_item(i)
-			break
+			return
+	print("Warning: tried to remove evidence that doesn't exist")
 
 
 func clear_evidence():

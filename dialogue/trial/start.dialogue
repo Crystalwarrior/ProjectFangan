@@ -19,7 +19,6 @@ Monokuma: Voting period will start after your time limit expires, so use your ti
 do change_sprite("res://characters/monokuma/Claws.png")
 Monokuma: Also, refusing to vote will result in your [color=orange][b]death[/b][/color], so you better vote for someone!
 
-do change_music("res://music/[T5] Mode Select.ogg")
 ~ question
 do change_sprite("res://characters/monokuma/Headtilt.png")
 Monokuma: Now, a quick question.[wait=0.5] Who is the protagonist of Danganronpa: Trigger Happy Havoc?!

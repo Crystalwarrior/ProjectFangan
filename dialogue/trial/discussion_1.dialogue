@@ -6,10 +6,17 @@
 import "res://dialogue/trial/evidence.dialogue" as evidence
 
 ~ start
-
 do change_music("res://music/[T5] Mode Select.ogg")
-do change_bg("res://backgrounds/ct/3.png")
 do change_fg("res://backgrounds/ct/stand.png")
+
+if debug
+	Skip to a segment? (warning, may break your evidence)
+	- continue
+	- Body Discovery => body_discovery
+	- Body Details => body_details
+	- Himiko Saw Culprut => himiko_saw_culprit
+
+do change_bg("res://backgrounds/ct/3.png")
 do change_sprite("res://characters/angie/ex/Perplexed.png")
 Angie: I can't believe we're actually doing this...
 
@@ -48,7 +55,10 @@ Ibuki: I'll try my best to help out. We can rule out Nagito hanging himself, rig
 
 do change_bg("res://backgrounds/ct/1.png")
 do change_sprite("res://characters/makoto/dumbfounded.png")
-Makoto: I'm not sure we can... But it's kind of a crazy idea.[wait=0.5] It's safe to assume the killer did that to him. Either way, we know it can't be suicide due to Monokuma's rules.
+Makoto: I'm not sure we can...[wait=0.5] But it's kind of a crazy idea.
+
+do change_sprite("res://characters/makoto/PonderingT.png")
+Makoto: It's safe to assume the killer did that to him. Either way, we know it can't be suicide due to Monokuma's rules.
 
 do change_bg("res://backgrounds/ct/2.png")
 do change_sprite("res://characters/kirumi/explain.png")
@@ -70,13 +80,18 @@ do change_sprite("res://characters/kirumi/thinking.png")
 Kirumi: I just want to make sure everyone is on the same page. I don't know what you know, and I'm sure you don't know what I know either.
 
 do change_bg("res://backgrounds/ct/3.png")
+do change_sprite("res://characters/angie/advisedark.png")
+Angie: You know something we don't?
+
+do change_bg("res://backgrounds/ct/2.png")
+do change_sprite("res://characters/tenko/condifent2.png")
+Tenko: Guys, we should focus! Who found the body?
+
+do change_bg("res://backgrounds/ct/3.png")
 do change_sprite("res://characters/byakuya/Disgusted.png")
 Byakuya: I'm sick of this. How was Nagito found?[wait=0.5] Testify!
 
-Angie:...
-
-Tenko:...
-
+~ body_discovery
 do change_music("res://music/[BR] The Legend of Mae (Progressive Trance Mix).ogg")
 do sfx("res://sounds/ding.wav")
 do effect("Flash")
@@ -110,6 +125,7 @@ Hajime: [color=aqua](So the three of them can back each other up. I should note 
 
 =>< evidence/body_discovery
 
+~ body_details
 do change_bg("res://backgrounds/ct/3.png")
 do change_sprite("res://characters/byakuya/Tell Them Naegi.png")
 Byakuya: Good. We're finally making progress. Now, speak about the body itself.
@@ -135,16 +151,24 @@ Hajime: [color=aqua](Huh, this sounds overkill for a simple hanging. I'll have t
 
 =>< evidence/nagito_body_details
 
+~ himiko_saw_culprit
+do change_bg("res://backgrounds/ct/2.png")
+do change_sprite("res://characters/himiko/serious.png")
 Himiko: I saw...
 
+do change_bg("res://backgrounds/ct/3.png")
+do change_sprite("res://characters/hajime/ExplanationS.png")
 Hajime: Huh? You saw..? What did you see, Himiko?
 
 do stop_music()
 do change_bg("res://backgrounds/ct/2.png")
 do change_sprite("res://characters/himiko/serious.png")
-Himiko: I saw...[wait=0.5] [do change_sprite("res://characters/himiko/shoutingmad.png")][do change_music("res://music/[UNIB] Paradox Altar.ogg")][color=red]the culprit![/color]
+Himiko: I saw...[wait=1.0] [do change_sprite("res://characters/himiko/shoutingmad.png")][do sfx("res://sounds/shock.wav")][do change_music("res://music/[UNIB] Paradox Altar.ogg")][color=red]the culprit![/color]
 
-Hajime: WHAT?!
+do change_bg("res://backgrounds/ct/3.png")
+do change_sprite("res://characters/hajime/Concerned.png")
+do sfx("res://sounds/drama.wav")
+Hajime: [shake rate=20 level=5]WHAT?![/shake]
 
 Himiko: Yes!![wait=0.2] I know who did it![wait=0.2] [shake rate=20 level=5]Teruteru,[wait=0.2] you were in the gym before we showed up![/shake]
 
@@ -152,13 +176,9 @@ Teruteru: Hey uh,[wait=0.2] what?[wait=0.2] Hold on a second...
 
 Mondo: Hey!! Himiko, you didn't tell us about this!
 
-Junko: ...Well...
-
 Junko: I uh...[wait=0.5] I think I know what Himiko is referring to![wait=0.2] Yeah![wait=0.2] [shake rate=20 level=10]Teruteru's the culprit![/shake]
 
 Mondo: Ex[shake rate=20 level=5]-fuckin-[/shake]scuse me!?
-
-Hajime: ...Uh...
 
 Tenko: You should have started out with that! 
 

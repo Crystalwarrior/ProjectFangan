@@ -16,7 +16,8 @@ func create_song(song: AudioStream, duration = 1.0):
 	self.add_child(audioplayer)
 	audioplayer.set_bus("Music")
 	audioplayer.stream = song
-	audioplayer.volume_db = -10
+	if current_audioplayer != null:
+		audioplayer.volume_db = -10
 	audioplayer.play()
 	current_audioplayer = audioplayer
 	var tween = audioplayer.create_tween()

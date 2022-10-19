@@ -1,4 +1,9 @@
+import "res://dialogue/trial/evidence.dialogue" as evidence
+
 ~ start
+=>< evidence/loud_noise
+=>< evidence/body_discovery
+=>< evidence/nagito_body_details
 do change_music("res://music/[DCS] The Last Babel.ogg")
 do change_sprite("res://characters/himiko/point.png")
 do change_bg("res://backgrounds/ct/2.png")
@@ -14,7 +19,7 @@ if get_flag("tutorial_seen") == "2"
 
 do change_bg("res://backgrounds/ct/1.png")
 do change_sprite("res://characters/himiko/lookdownfinger.png")
-Himiko: So I was going to the gym at night, minding my own business, when I saw Mr.Teruteru Hanemura out and about inside the gym.
+Himiko: At night, me and Junko were going to the infirmary when I saw our Mr. Culprit going into the gym!
 if get_flag("tutorial_seen") == "1"
 	=> tutorial
 
@@ -27,7 +32,7 @@ if get_flag("tutorial_seen") == "2"
 
 do change_bg("res://backgrounds/ct/2.png")
 do change_sprite("res://characters/Celeste/cheeky.png")
-Celeste: So you were by yourself? Curious... I was with Aoi in the Laundry Room as we washed our clothes.
+Celeste: lol
 
 ~ statement_3
 if get_flag("tutorial_seen") == "2"
@@ -38,7 +43,7 @@ if get_flag("tutorial_seen") == "2"
 
 do change_bg("res://backgrounds/ct/2.png")
 do change_sprite("res://characters/Celeste/playful.png")
-Celeste: Of course, Aoi can't corraborate my testimony, seeing as she is deceased.
+Celeste: lmao
 if get_flag("tutorial_seen") == ""
 	do set_flag("tutorial_seen", "1")
 	=> statement_1
@@ -46,7 +51,7 @@ if get_flag("tutorial_seen") == ""
 ~ tutorial
 do change_bg("res://backgrounds/ct/3.png")
 do change_sprite("res://characters/hajime/Speaking.png")
-Hajime: [color=aqua](Wait a second, Togami is repeating himself.)[/color]
+Hajime: [color=aqua](That's weird,[wait=0.2] Himiko is repeating herself.)[/color]
 do change_sprite("res://characters/hajime/Explanation.png")
 Hajime: [color=aqua](This must be a [color=lime]Circular Debate[/color]. I can go back and forth between statements to search for a [color=orange]Contradiction[/color] by [color=lime]Presenting[/color] a piece of [color=orange]Evidence[/color].)[/color]
 do set_flag("tutorial_seen", "2")
@@ -80,6 +85,9 @@ do next_line("")
 do previous_line("")
 do change_sprite("res://characters/celeste/playful.png")
 Celeste: Oh ho? {{presented}}? I don't know anything about that.
+do change_bg("res://backgrounds/ct/3.png")
+do change_sprite("res://characters/hajime/Argumentative.png")
+Hajime: Wait a second who the fuck are you?
 => statement_2
 
 ~ present_3
@@ -87,4 +95,7 @@ do next_line("")
 do previous_line("")
 do change_sprite("res://characters/celeste/playful.png")
 Celeste: My, my. {{presented}}? I don't know anything about that.
+do change_bg("res://backgrounds/ct/3.png")
+do change_sprite("res://characters/hajime/Argumentative.png")
+Hajime: Wait a second who the fuck are you?
 => statement_3

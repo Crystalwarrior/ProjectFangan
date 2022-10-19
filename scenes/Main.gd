@@ -21,6 +21,7 @@ var presented = ""
 
 var flags = {}
 
+var debug = true
 
 func set_flag(key: String, value: String):
 	flags[key] = value
@@ -92,6 +93,10 @@ func next_line(title: String):
 
 func previous_line(title: String):
 	dialog_bubble.previous_line = title
+
+
+func find_evidence(evi_name: String):
+	return evidence_screen.find_evidence(evi_name)
 
 
 func add_evidence(evi_name: String, evi_image: String, evi_desc: String):
