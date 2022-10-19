@@ -125,7 +125,6 @@ Hajime: [color=aqua](So the three of them can back each other up. I should note 
 
 =>< evidence/body_discovery
 
-~ body_details
 do change_bg("res://backgrounds/ct/3.png")
 do change_sprite("res://characters/byakuya/Tell Them Naegi.png")
 Byakuya: Good. We're finally making progress. Now, speak about the body itself.
@@ -134,6 +133,7 @@ do change_bg("res://backgrounds/ct/2.png")
 do change_sprite("res://characters/himiko/lookdownsad.png")
 Himiko: ....
 
+~ body_details
 do change_bg("res://backgrounds/ct/1.png")
 do change_sprite("res://characters/mondo/annoyed.png")
 Mondo: Like Junko said we found Nagito hanging from that rope like a piñata, it took us a second to calm ourselves but we eventually managed to put the body down. 
@@ -151,7 +151,6 @@ Hajime: [color=aqua](Huh, this sounds overkill for a simple hanging. I'll have t
 
 =>< evidence/nagito_body_details
 
-~ himiko_saw_culprit
 do change_bg("res://backgrounds/ct/2.png")
 do change_sprite("res://characters/himiko/serious.png")
 Himiko: I saw...
@@ -160,6 +159,7 @@ do change_bg("res://backgrounds/ct/3.png")
 do change_sprite("res://characters/hajime/ExplanationS.png")
 Hajime: Huh? You saw..? What did you see, Himiko?
 
+~ himiko_saw_culprit
 do stop_music()
 do change_bg("res://backgrounds/ct/2.png")
 do change_sprite("res://characters/himiko/serious.png")
