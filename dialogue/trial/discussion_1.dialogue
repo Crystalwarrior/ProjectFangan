@@ -7,14 +7,14 @@ import "res://dialogue/trial/evidence.dialogue" as evidence
 
 ~ start
 do change_music("res://music/[T5] Mode Select.ogg")
-do change_fg("res://backgrounds/ct/stand.png")
-
 if debug
 	Skip to a segment? (warning, may break your evidence)
 	- continue
 	- Body Discovery => body_discovery
 	- Body Details => body_details
 	- Himiko Saw Culprut => himiko_saw_culprit
+
+do change_fg("res://backgrounds/ct/stand.png")
 
 do change_bg("res://backgrounds/ct/3.png")
 do change_sprite("res://characters/angie/ex/Perplexed.png")
@@ -72,6 +72,7 @@ do change_bg("res://backgrounds/ct/3.png")
 do change_sprite("res://characters/mahiru/distressed.png")
 Mahiru: I... couldn't look... It was a bit too much for me, I'm not sure I can do this...
 
+do change_bg("res://backgrounds/ct/1.png")
 do change_sprite("res://characters/teruteru/Worried.png")
 Teruteru: I don't even want to think about it, makes me sick.
 
@@ -170,22 +171,40 @@ do change_sprite("res://characters/hajime/Concerned.png")
 do sfx("res://sounds/drama.wav")
 Hajime: [shake rate=20 level=5]WHAT?![/shake]
 
+do change_bg("res://backgrounds/ct/2.png")
+do change_sprite("res://characters/himiko/point.png")
 Himiko: Yes!![wait=0.2] I know who did it![wait=0.2] [shake rate=20 level=5]Teruteru,[wait=0.2] you were in the gym before we showed up![/shake]
 
-Teruteru: Hey uh,[wait=0.2] what?[wait=0.2] Hold on a second...
+do change_bg("res://backgrounds/ct/1.png")
+do change_sprite("res://characters/teruteru/Nervous.png")
+Teruteru: Hey uh,[wait=0.2] what?[wait=0.2] [wave amp=15 freq=3]Hold on a second...[/wave]
 
+do change_bg("res://backgrounds/ct/1.png")
+do change_sprite("res://characters/mondo/frustrated.png")
 Mondo: Hey!! Himiko, you didn't tell us about this!
 
-Junko: I uh...[wait=0.5] I think I know what Himiko is referring to![wait=0.2] Yeah![wait=0.2] [shake rate=20 level=10]Teruteru's the culprit![/shake]
+do change_bg("res://backgrounds/ct/3.png")
+do change_sprite("res://characters/junko/Restless.png")
+Junko: I uh...[wait=0.5] [do change_sprite("res://characters/junko/Pissed.png")]I think I know what Himiko is referring to![wait=0.2] Yeah![wait=0.2] [shake rate=20 level=10]Teruteru's the culprit![/shake]
 
+do change_bg("res://backgrounds/ct/1.png")
+do change_sprite("res://characters/mondo/furious.png")
 Mondo: Ex[shake rate=20 level=5]-fuckin-[/shake]scuse me!?
 
+do change_bg("res://backgrounds/ct/2.png")
+do change_sprite("res://characters/tenko/Doublepoint.png")
 Tenko: You should have started out with that! 
 
+do change_bg("res://backgrounds/ct/1.png")
+do change_sprite("res://characters/yasuhiro/proud.png")
 Yasuhiro: Wow, I didn't think our first trial would be so short.
 
+do change_bg("res://backgrounds/ct/1.png")
+do change_sprite("res://characters/teruteru/Anxious.png")
 Teruteru: W-W-Wait guys! She hasn't even said anything! I'm not the culprit!
 
-Angie: Y-Yeah we should slow down and hear the details.
+do change_bg("res://backgrounds/ct/3.png")
+do change_sprite("res://characters/angie/hand.png")
+Angie: We should slow down and hear the details.
 
 do start_dialogue("res://dialogue/trial/debate_1.dialogue", "start")
