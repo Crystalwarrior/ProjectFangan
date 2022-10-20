@@ -35,7 +35,7 @@ var TOKEN_DEFINITIONS: Dictionary = {
 	DialogueConstants.TOKEN_BOOL: RegEx.create_from_string("^(true|false)"),
 	DialogueConstants.TOKEN_NOT: RegEx.create_from_string("^(not( |$)|!)"),
 	DialogueConstants.TOKEN_AND_OR: RegEx.create_from_string("^(and|or)( |$)"),
-	DialogueConstants.TOKEN_STRING: RegEx.create_from_string("^[\"\'].*?[\"\']"),
+	DialogueConstants.TOKEN_STRING: RegEx.create_from_string("^(\".*?\"|\'.*?\')"),
 	DialogueConstants.TOKEN_VARIABLE: RegEx.create_from_string("^[a-zA-Z_][a-zA-Z_0-9]+"),
 	DialogueConstants.TOKEN_COMMENT: RegEx.create_from_string("^#.*")
 }
@@ -482,12 +482,9 @@ func get_line_after_line(id: int, indent_size: int, line: Dictionary) -> String:
 	var next_nonempty_line_id = get_next_nonempty_line_id(id)
 	if next_nonempty_line_id != DialogueConstants.ID_NULL \
 		and indent_size <= get_indent(raw_lines[next_nonempty_line_id.to_int()]):
-		# The next line is a title so we can end here
+		# The next line is a title so we need the next nonempty line after that
 		if is_title_line(raw_lines[next_nonempty_line_id.to_int()]):
-			if line.type == DialogueConstants.TYPE_GOTO:
-				return DialogueConstants.ID_NULL
-			else:
-				return get_next_nonempty_line_id(next_nonempty_line_id.to_int())
+			return get_next_nonempty_line_id(next_nonempty_line_id.to_int())
 		# Otherwise it's a normal line
 		else:
 			return next_nonempty_line_id
@@ -783,7 +780,7 @@ func extract_mutation(line: String) -> Dictionary:
 		if expression.size() == 0:
 			return { error = DialogueConstants.ERR_INCOMPLETE_EXPRESSION }
 		elif expression[0].type == DialogueConstants.TYPE_ERROR:
-			return { error = DialogueConstants.ERR_INVALID_EXPRESSION_FOR_VALUE }
+			return { error = expression[0].value }
 		else:
 			return { expression = expression }
 	
@@ -1143,13 +1140,10 @@ func build_token_tree(tokens: Array[Dictionary], expected_close_token: String = 
 				})
 			
 			DialogueConstants.TOKEN_STRING:
-				if token.value[0] == "'":
-					return [build_token_tree_error(DialogueConstants.ERR_STRINGS_MUST_USE_DOUBLE_QUOTE), tokens]
-				else:
-					tree.append({
-						type = token.type,
-						value = token.value.substr(1, token.value.length() - 2)
-					})
+				tree.append({
+					type = token.type,
+					value = token.value.substr(1, token.value.length() - 2)
+				})
 			
 			DialogueConstants.TOKEN_BOOL:
 				tree.append({
