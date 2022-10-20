@@ -100,10 +100,13 @@ func _on_item_selected(idx: int):
 
 
 func _on_back_pressed():
-	set_visible(false)
-	emit_signal("back_pressed")
 	sfx_player.stream = sfx_paper_down
 	sfx_player.play()
+	if $Regulations.visible:
+		$Regulations.hide()
+		return
+	set_visible(false)
+	emit_signal("back_pressed")
 
 
 func _on_present_pressed():
@@ -111,3 +114,9 @@ func _on_present_pressed():
 	emit_signal("present_pressed", evidence_array[evidence_list.get_selected_items()[0]]["name"])
 	sfx_player.stream = sfx_paper_down
 	sfx_player.play()
+
+
+func _on_regulations_button_pressed():
+	sfx_player.stream = sfx_paper_up
+	sfx_player.play()
+	$Regulations.show()

@@ -1,15 +1,28 @@
-[gd_scene load_steps=10 format=3 uid="uid://dbupvfqqahdfq"]
+[gd_scene load_steps=23 format=3 uid="uid://dbupvfqqahdfq"]
 
 [ext_resource type="Texture2D" uid="uid://bwu24i7gdxh34" path="res://ui/regulations/image13.png" id="1_atl0l"]
+[ext_resource type="Script" path="res://scenes/regulations.gd" id="1_b6p5w"]
 [ext_resource type="Texture2D" uid="uid://boirvjpt5ac4x" path="res://ui/regulations/image2.png" id="2_bmnte"]
 [ext_resource type="Texture2D" uid="uid://4v5crrr7k63j" path="res://ui/regulations/image4.png" id="3_s0ycv"]
 [ext_resource type="Texture2D" uid="uid://s7ef5ki1i766" path="res://ui/regulations/image20.png" id="4_fw5d2"]
 [ext_resource type="Texture2D" uid="uid://c5g7h5qulorry" path="res://ui/regulations/image1.png" id="5_5c7v8"]
 [ext_resource type="Texture2D" uid="uid://dtxag8lmt6s5e" path="res://ui/regulations/image12.png" id="6_gv3ib"]
 [ext_resource type="Texture2D" uid="uid://dvbc4gdpnm0o8" path="res://ui/regulations/image3.png" id="7_1xi6v"]
+[ext_resource type="Texture2D" uid="uid://c85jeo8a4872q" path="res://ui/regulations/image5.png" id="8_8bk1p"]
+[ext_resource type="Texture2D" uid="uid://dxr4iccwr4coa" path="res://ui/regulations/image9.png" id="9_nmmq6"]
+[ext_resource type="Texture2D" uid="uid://l1it6eosgelc" path="res://ui/regulations/image11.png" id="10_qrqsf"]
+[ext_resource type="Texture2D" uid="uid://bof8wnresru2x" path="res://ui/regulations/image8.png" id="11_40lmq"]
+[ext_resource type="Texture2D" uid="uid://cbmb0pnhibv8s" path="res://ui/regulations/image6.png" id="12_4jkx3"]
+[ext_resource type="Texture2D" uid="uid://c5wm62xp3jxiw" path="res://ui/regulations/image17.png" id="13_wvdij"]
+[ext_resource type="Texture2D" uid="uid://bfmdxnrj6442i" path="res://ui/regulations/image14.png" id="14_rfte4"]
+[ext_resource type="Texture2D" uid="uid://bgq7fac5fe2jb" path="res://ui/regulations/image16.png" id="15_arj0d"]
+[ext_resource type="Texture2D" uid="uid://dujlg8ncrbuo2" path="res://ui/regulations/image15.png" id="16_l311m"]
+[ext_resource type="Texture2D" uid="uid://cj0g5nlr142yj" path="res://ui/regulations/image21.png" id="17_2esls"]
+[ext_resource type="Texture2D" uid="uid://ccta2iiaf010o" path="res://ui/regulations/image22.png" id="18_b83lh"]
+[ext_resource type="Texture2D" uid="uid://dh6c2eofpn2s6" path="res://ui/arrow.png" id="19_k53bn"]
 
 [sub_resource type="Gradient" id="Gradient_e7t2m"]
-colors = PackedColorArray(0, 0, 0, 1, 0, 0.145098, 0.313726, 1)
+colors = PackedColorArray(0, 0.0470588, 0.0313726, 1, 0, 0.145098, 0.313726, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_mm08w"]
 gradient = SubResource("Gradient_e7t2m")
@@ -19,6 +32,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 1
+script = ExtResource("1_b6p5w")
 
 [node name="BG" type="TextureRect" parent="."]
 layout_mode = 1
@@ -29,8 +44,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture1D_mm08w")
 
-[node name="Rule1" type="Control" parent="."]
-visible = false
+[node name="RuleContainer" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,7 +52,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="Rule1"]
+[node name="Rule1" type="Control" parent="RuleContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="RuleContainer/Rule1"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -53,7 +76,7 @@ texture = ExtResource("1_atl0l")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Rule1"]
+[node name="Label" type="Label" parent="RuleContainer/Rule1"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -71,7 +94,7 @@ text = "Rule #1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Rule1"]
+[node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule1"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -88,7 +111,7 @@ theme_override_font_sizes/mono_font_size = 36
 bbcode_enabled = true
 text = "[center]All participants may make no attempts to leave the premises at any point while the killing game is still ongoing.[/center]"
 
-[node name="Rule2" type="Control" parent="."]
+[node name="Rule2" type="Control" parent="RuleContainer"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -96,8 +119,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
-[node name="TextureRect" type="TextureRect" parent="Rule2"]
+[node name="TextureRect" type="TextureRect" parent="RuleContainer/Rule2"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -112,7 +136,7 @@ texture = ExtResource("2_bmnte")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Rule2"]
+[node name="Label" type="Label" parent="RuleContainer/Rule2"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -130,7 +154,7 @@ text = "Rule #2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Rule2"]
+[node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule2"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -147,7 +171,7 @@ theme_override_font_sizes/mono_font_size = 36
 bbcode_enabled = true
 text = "[center]Attempts to harm the overseer at any time are forbidden.[/center]"
 
-[node name="Rule3" type="Control" parent="."]
+[node name="Rule3" type="Control" parent="RuleContainer"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -155,8 +179,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
-[node name="TextureRect" type="TextureRect" parent="Rule3"]
+[node name="TextureRect" type="TextureRect" parent="RuleContainer/Rule3"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -171,7 +196,7 @@ texture = ExtResource("3_s0ycv")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Rule3"]
+[node name="Label" type="Label" parent="RuleContainer/Rule3"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -189,7 +214,7 @@ text = "Rule #3"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Rule3"]
+[node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule3"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -206,7 +231,7 @@ theme_override_font_sizes/mono_font_size = 36
 bbcode_enabled = true
 text = "[center]The overseer will not harm any participant unless they have broken a rule.[/center]"
 
-[node name="Rule4" type="Control" parent="."]
+[node name="Rule4" type="Control" parent="RuleContainer"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -214,8 +239,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
-[node name="TextureRect" type="TextureRect" parent="Rule4"]
+[node name="TextureRect" type="TextureRect" parent="RuleContainer/Rule4"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -230,7 +256,7 @@ texture = ExtResource("4_fw5d2")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Rule4"]
+[node name="Label" type="Label" parent="RuleContainer/Rule4"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -248,7 +274,7 @@ text = "Rule #4"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Rule4"]
+[node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule4"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -263,9 +289,9 @@ theme_override_font_sizes/italics_font_size = 36
 theme_override_font_sizes/bold_italics_font_size = 36
 theme_override_font_sizes/mono_font_size = 36
 bbcode_enabled = true
-text = "[center]Destruction of any surveillance equipment, generators, or heaters is [color=maroon]strictly prohibited[/color].[/center]"
+text = "[center]Destruction of any surveillance equipment is [color=maroon]strictly prohibited[/color].[/center]"
 
-[node name="Rule5" type="Control" parent="."]
+[node name="Rule5" type="Control" parent="RuleContainer"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -273,8 +299,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
-[node name="TextureRect" type="TextureRect" parent="Rule5"]
+[node name="TextureRect" type="TextureRect" parent="RuleContainer/Rule5"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -289,7 +316,7 @@ texture = ExtResource("5_5c7v8")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Rule5"]
+[node name="Label" type="Label" parent="RuleContainer/Rule5"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -307,7 +334,7 @@ text = "Rule #5"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Rule5"]
+[node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule5"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -324,7 +351,7 @@ theme_override_font_sizes/mono_font_size = 36
 bbcode_enabled = true
 text = "[center]Shifts between daytime and nighttime will be announced at [color=orange]8 AM[/color] and [color=cyan]8 PM[/color] respectively.[/center]"
 
-[node name="Rule6" type="Control" parent="."]
+[node name="Rule6" type="Control" parent="RuleContainer"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -332,8 +359,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
-[node name="TextureRect" type="TextureRect" parent="Rule6"]
+[node name="TextureRect" type="TextureRect" parent="RuleContainer/Rule6"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -348,7 +376,7 @@ texture = ExtResource("6_gv3ib")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Rule6"]
+[node name="Label" type="Label" parent="RuleContainer/Rule6"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -366,7 +394,7 @@ text = "Rule #6"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Rule6"]
+[node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule6"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -383,7 +411,7 @@ theme_override_font_sizes/mono_font_size = 36
 bbcode_enabled = true
 text = "[center]A [color=gray]Blackened[/color] is a participant who has killed, and whose victim died the earliest in the Chapter, even if a different victim's body was discovered.[/center]"
 
-[node name="Rule7" type="Control" parent="."]
+[node name="Rule7" type="Control" parent="RuleContainer"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -391,8 +419,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
-[node name="TextureRect" type="TextureRect" parent="Rule7"]
+[node name="TextureRect" type="TextureRect" parent="RuleContainer/Rule7"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -407,7 +436,7 @@ texture = ExtResource("7_1xi6v")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Rule7"]
+[node name="Label" type="Label" parent="RuleContainer/Rule7"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -425,7 +454,7 @@ text = "Rule #7"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Rule7"]
+[node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule7"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -442,15 +471,17 @@ theme_override_font_sizes/mono_font_size = 36
 bbcode_enabled = true
 text = "[center]The [color=gray]Blackened[/color] must always be alive. In the event of a [color=gray]Blackened[/color] being killed by someone else, that someone else becomes the new [color=gray]Blackened[/color].[/center]"
 
-[node name="Rule8" type="Control" parent="."]
+[node name="Rule8" type="Control" parent="RuleContainer"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
-[node name="TextureRect" type="TextureRect" parent="Rule8"]
+[node name="TextureRect" type="TextureRect" parent="RuleContainer/Rule8"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -465,7 +496,7 @@ texture = ExtResource("7_1xi6v")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Rule8"]
+[node name="Label" type="Label" parent="RuleContainer/Rule8"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -483,7 +514,7 @@ text = "Rule #8"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Rule8"]
+[node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule8"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -499,3 +530,947 @@ theme_override_font_sizes/bold_italics_font_size = 36
 theme_override_font_sizes/mono_font_size = 36
 bbcode_enabled = true
 text = "[center]The last person to cause a fatal injury that killed the victim is the [color=gray]Blackened[/color]. The victim hurting themselves cannot make them [color=gray]Blackened[/color] when they're dying.[/center]"
+
+[node name="Rule9" type="Control" parent="RuleContainer"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="RuleContainer/Rule9"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -116.0
+offset_top = 17.0
+offset_right = 119.0
+offset_bottom = 222.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("8_8bk1p")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="RuleContainer/Rule9"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -45.5
+offset_right = 480.0
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "Rule #9"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule9"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -224.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/bold_font_size = 36
+theme_override_font_sizes/italics_font_size = 36
+theme_override_font_sizes/bold_italics_font_size = 36
+theme_override_font_sizes/mono_font_size = 36
+bbcode_enabled = true
+text = "[center]If the [color=gray]Blackened[/color] dies by their own hands, they will no longer be considered [color=gray]Blackened[/color] and their victims will be void.[/center]"
+
+[node name="Rule10" type="Control" parent="RuleContainer"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="RuleContainer/Rule10"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -116.0
+offset_top = 17.0
+offset_right = 119.0
+offset_bottom = 222.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("9_nmmq6")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="RuleContainer/Rule10"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -45.5
+offset_right = 480.0
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "Rule #10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule10"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -224.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/bold_font_size = 36
+theme_override_font_sizes/italics_font_size = 36
+theme_override_font_sizes/bold_italics_font_size = 36
+theme_override_font_sizes/mono_font_size = 36
+bbcode_enabled = true
+text = "[center]A period of investigation will start once [color=orange]3 participants[/color] choose a victim of murder on their PDAs.[/center]"
+
+[node name="Rule11" type="Control" parent="RuleContainer"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="RuleContainer/Rule11"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -116.0
+offset_top = 17.0
+offset_right = 119.0
+offset_bottom = 209.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("10_qrqsf")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="RuleContainer/Rule11"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -45.5
+offset_right = 480.0
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "Rule #11"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule11"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -224.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/bold_font_size = 36
+theme_override_font_sizes/italics_font_size = 36
+theme_override_font_sizes/bold_italics_font_size = 36
+theme_override_font_sizes/mono_font_size = 36
+bbcode_enabled = true
+text = "[center]If a participant were to choose a \"victim\" who was actually still alive or was not valid, they will be unable to discover anyone else until the chapter has ended or until a week has passed.[/center]"
+
+[node name="Rule12" type="Control" parent="RuleContainer"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="RuleContainer/Rule12"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -116.0
+offset_top = 17.0
+offset_right = 119.0
+offset_bottom = 222.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("11_40lmq")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="RuleContainer/Rule12"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -45.5
+offset_right = 480.0
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "Rule #12"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule12"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -224.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/bold_font_size = 36
+theme_override_font_sizes/italics_font_size = 36
+theme_override_font_sizes/bold_italics_font_size = 36
+theme_override_font_sizes/mono_font_size = 36
+bbcode_enabled = true
+text = "[center]As soon as the investigation period starts, no murders are allowed to occur until after the Class Trial has ended.[/center]"
+
+[node name="Rule13" type="Control" parent="RuleContainer"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="RuleContainer/Rule13"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -460.0
+offset_top = 67.0
+offset_right = -361.0
+offset_bottom = 254.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("12_4jkx3")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="RuleContainer/Rule13"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -342.0
+offset_top = 33.0
+offset_right = -243.0
+offset_bottom = 220.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("12_4jkx3")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="RuleContainer/Rule13"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -215.0
+offset_top = 17.0
+offset_right = -116.0
+offset_bottom = 204.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("12_4jkx3")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureRect4" type="TextureRect" parent="RuleContainer/Rule13"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 111.0
+offset_top = 16.0
+offset_right = 210.0
+offset_bottom = 203.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("12_4jkx3")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureRect5" type="TextureRect" parent="RuleContainer/Rule13"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 229.0
+offset_top = 33.0
+offset_right = 328.0
+offset_bottom = 220.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("12_4jkx3")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureRect6" type="TextureRect" parent="RuleContainer/Rule13"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 359.0
+offset_top = 67.0
+offset_right = 458.0
+offset_bottom = 254.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("12_4jkx3")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="RuleContainer/Rule13"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -45.5
+offset_right = 480.0
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "Rule #13"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule13"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -224.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/bold_font_size = 36
+theme_override_font_sizes/italics_font_size = 36
+theme_override_font_sizes/bold_italics_font_size = 36
+theme_override_font_sizes/mono_font_size = 36
+bbcode_enabled = true
+text = "[center]Once investigation has ended and there is a living [color=gray]Blackened[/color], all participants must go to the Class Trial area. Every living participant must make any sort of contribution to the Class Trial.[/center]"
+
+[node name="Rule14" type="Control" parent="RuleContainer"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="RuleContainer/Rule14"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -460.0
+offset_top = 67.0
+offset_right = -361.0
+offset_bottom = 254.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("12_4jkx3")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureRect7" type="TextureRect" parent="RuleContainer/Rule14"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -117.0
+offset_top = 10.0
+offset_right = 120.0
+offset_bottom = 73.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("13_wvdij")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="RuleContainer/Rule14"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -342.0
+offset_top = 33.0
+offset_right = -243.0
+offset_bottom = 220.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("12_4jkx3")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="RuleContainer/Rule14"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -215.0
+offset_top = 17.0
+offset_right = -116.0
+offset_bottom = 204.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("12_4jkx3")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureRect4" type="TextureRect" parent="RuleContainer/Rule14"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 111.0
+offset_top = 16.0
+offset_right = 210.0
+offset_bottom = 203.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("12_4jkx3")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureRect5" type="TextureRect" parent="RuleContainer/Rule14"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 229.0
+offset_top = 33.0
+offset_right = 328.0
+offset_bottom = 220.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("12_4jkx3")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureRect6" type="TextureRect" parent="RuleContainer/Rule14"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 359.0
+offset_top = 67.0
+offset_right = 458.0
+offset_bottom = 254.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("12_4jkx3")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="RuleContainer/Rule14"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -45.5
+offset_right = 480.0
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "Rule #14"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule14"]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -224.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/bold_font_size = 36
+theme_override_font_sizes/italics_font_size = 36
+theme_override_font_sizes/bold_italics_font_size = 36
+theme_override_font_sizes/mono_font_size = 36
+bbcode_enabled = true
+text = "[center]During a Class Trial, all participants must work together to figure out who is the [color=gray]Blackened[/color] among them. They will be given a set amount of time to discuss their findings, after which a vote will begin.[/center]"
+
+[node name="Rule15" type="Control" parent="RuleContainer"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="RuleContainer/Rule15"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -460.0
+offset_top = 67.0
+offset_right = -361.0
+offset_bottom = 254.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("12_4jkx3")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="RuleContainer/Rule15"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -342.0
+offset_top = 33.0
+offset_right = -243.0
+offset_bottom = 220.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("12_4jkx3")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="RuleContainer/Rule15"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -215.0
+offset_top = 17.0
+offset_right = -116.0
+offset_bottom = 204.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("12_4jkx3")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureRect4" type="TextureRect" parent="RuleContainer/Rule15"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -29.0
+offset_top = 49.0
+offset_right = 108.0
+offset_bottom = 175.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("14_rfte4")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureRect5" type="TextureRect" parent="RuleContainer/Rule15"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 229.0
+offset_top = 33.0
+offset_right = 328.0
+offset_bottom = 220.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("12_4jkx3")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureRect6" type="TextureRect" parent="RuleContainer/Rule15"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 359.0
+offset_top = 67.0
+offset_right = 458.0
+offset_bottom = 254.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("12_4jkx3")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="RuleContainer/Rule15"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -45.5
+offset_right = 480.0
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "Rule #15"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule15"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -224.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/bold_font_size = 36
+theme_override_font_sizes/italics_font_size = 36
+theme_override_font_sizes/bold_italics_font_size = 36
+theme_override_font_sizes/mono_font_size = 36
+bbcode_enabled = true
+text = "[center]If the [color=gray]Blackened[/color] receives the most votes, the Blackened will be executed while the other participants continue with the killing game.
+[/center]"
+
+[node name="Rule16" type="Control" parent="RuleContainer"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Label" type="Label" parent="RuleContainer/Rule16"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -45.5
+offset_right = 480.0
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "Rule #16"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule16"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -224.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/bold_font_size = 36
+theme_override_font_sizes/italics_font_size = 36
+theme_override_font_sizes/bold_italics_font_size = 36
+theme_override_font_sizes/mono_font_size = 36
+bbcode_enabled = true
+text = "[center]If anyone else receives the most votes or there is a tie, every participant besides the [color=Gray]Blackened[/color] will be executed and the killing game will end.[/center]"
+
+[node name="TextureRect8" type="TextureRect" parent="RuleContainer/Rule16"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -197.0
+offset_top = 26.0
+offset_right = -38.0
+offset_bottom = 139.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("15_arj0d")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureRect11" type="TextureRect" parent="RuleContainer/Rule16"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 175.0
+offset_top = 65.0
+offset_right = 334.0
+offset_bottom = 178.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("15_arj0d")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureRect12" type="TextureRect" parent="RuleContainer/Rule16"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 314.0
+offset_top = 126.0
+offset_right = 473.0
+offset_bottom = 239.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("15_arj0d")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureRect9" type="TextureRect" parent="RuleContainer/Rule16"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -340.0
+offset_top = 64.0
+offset_right = -181.0
+offset_bottom = 177.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("15_arj0d")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureRect10" type="TextureRect" parent="RuleContainer/Rule16"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -456.0
+offset_top = 138.0
+offset_right = -297.0
+offset_bottom = 251.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("15_arj0d")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureRect4" type="TextureRect" parent="RuleContainer/Rule16"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.0
+offset_top = 11.0
+offset_right = 75.0
+offset_bottom = 198.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("16_l311m")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Rule17" type="Control" parent="RuleContainer"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Label" type="Label" parent="RuleContainer/Rule17"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -45.5
+offset_right = 480.0
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "Rule #17"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule17"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -224.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/bold_font_size = 36
+theme_override_font_sizes/italics_font_size = 36
+theme_override_font_sizes/bold_italics_font_size = 36
+theme_override_font_sizes/mono_font_size = 36
+bbcode_enabled = true
+text = "[center]Voting for yourself or refusing to vote at all is [color=maroon]strictly prohibited[/color].[/center]"
+
+[node name="TextureRect4" type="TextureRect" parent="RuleContainer/Rule17"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -138.0
+offset_top = 3.0
+offset_right = 149.0
+offset_bottom = 234.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("17_2esls")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Rule18" type="Control" parent="RuleContainer"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Label" type="Label" parent="RuleContainer/Rule18"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -45.5
+offset_right = 480.0
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "Rule #18"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule18"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -224.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/bold_font_size = 36
+theme_override_font_sizes/italics_font_size = 36
+theme_override_font_sizes/bold_italics_font_size = 36
+theme_override_font_sizes/mono_font_size = 36
+bbcode_enabled = true
+text = "[center]If the killing game is still continuing when only two people are left alive, the killing game will end.[/center]"
+
+[node name="TextureRect4" type="TextureRect" parent="RuleContainer/Rule18"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -238.0
+offset_top = 7.0
+offset_right = 202.0
+offset_bottom = 243.0
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("18_b83lh")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ArrowLeft" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -64.0
+offset_right = 64.0
+grow_vertical = 0
+texture_normal = ExtResource("19_k53bn")
+flip_h = true
+
+[node name="ArrowRight" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("19_k53bn")
+
+[connection signal="pressed" from="ArrowLeft" to="." method="_on_arrow_left_pressed"]
+[connection signal="pressed" from="ArrowRight" to="." method="_on_arrow_right_pressed"]
