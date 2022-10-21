@@ -1,7 +1,8 @@
 # Summary:
 # Everyone starts talking about the body. Kirumi brings up a question how Nagito's body was found.
 # Junko, Mondo and Himiko found the body together. Hajime takes a note of it, that note is added to evidence.
-#
+# Maki and Mondo examined the body. The details of the body discovery are put in the evidence
+# Himiko says she and Junko saw Teruteru walking to the gym at night, calling him the culprit, this starts the first circular debate
 
 import "res://dialogue/trial/evidence.dialogue" as evidence
 
