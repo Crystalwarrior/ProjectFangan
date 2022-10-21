@@ -6,6 +6,8 @@ var can_present = false
 var placeholder_image = preload("res://evidence/Unknown.png")
 var sfx_paper_up = preload("res://sounds/paper_up.wav")
 var sfx_paper_down = preload("res://sounds/paper_down.wav")
+var sfx_ui_up = preload("res://sounds/ui_up.wav")
+var sfx_ui_down = preload("res://sounds/ui_down.wav")
 var sfx_select = preload("res://sounds/select.wav")
 var sfx_scroll = preload("res://sounds/scroll.wav")
 
@@ -100,11 +102,13 @@ func _on_item_selected(idx: int):
 
 
 func _on_back_pressed():
-	sfx_player.stream = sfx_paper_down
-	sfx_player.play()
 	if $Regulations.visible:
+		sfx_player.stream = sfx_ui_down
+		sfx_player.play()
 		$Regulations.hide()
 		return
+	sfx_player.stream = sfx_paper_down
+	sfx_player.play()
 	set_visible(false)
 	emit_signal("back_pressed")
 
@@ -117,6 +121,6 @@ func _on_present_pressed():
 
 
 func _on_regulations_button_pressed():
-	sfx_player.stream = sfx_paper_up
+	sfx_player.stream = sfx_ui_up
 	sfx_player.play()
 	$Regulations.show()

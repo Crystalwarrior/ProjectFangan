@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dbupvfqqahdfq"]
+[gd_scene load_steps=24 format=3 uid="uid://dbupvfqqahdfq"]
 
 [ext_resource type="Texture2D" uid="uid://bwu24i7gdxh34" path="res://ui/regulations/image13.png" id="1_atl0l"]
 [ext_resource type="Script" path="res://scenes/regulations.gd" id="1_b6p5w"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://cj0g5nlr142yj" path="res://ui/regulations/image21.png" id="17_2esls"]
 [ext_resource type="Texture2D" uid="uid://ccta2iiaf010o" path="res://ui/regulations/image22.png" id="18_b83lh"]
 [ext_resource type="Texture2D" uid="uid://dh6c2eofpn2s6" path="res://ui/arrow.png" id="19_k53bn"]
+[ext_resource type="AudioStream" uid="uid://btfdurnobcueq" path="res://sounds/scroll.wav" id="21_ex43j"]
 
 [sub_resource type="Gradient" id="Gradient_e7t2m"]
 colors = PackedColorArray(0, 0.0470588, 0.0313726, 1, 0, 0.145098, 0.313726, 1)
@@ -32,11 +33,12 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_b6p5w")
 
 [node name="BG" type="TextureRect" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -45,7 +47,7 @@ grow_vertical = 2
 texture = SubResource("GradientTexture1D_mm08w")
 
 [node name="RuleContainer" type="Control" parent="."]
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -53,7 +55,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Rule1" type="Control" parent="RuleContainer"]
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -62,7 +64,6 @@ grow_vertical = 2
 mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="RuleContainer/Rule1"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -77,7 +78,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="RuleContainer/Rule1"]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -95,7 +95,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule1"]
-layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -113,7 +112,7 @@ text = "[center]All participants may make no attempts to leave the premises at a
 
 [node name="Rule2" type="Control" parent="RuleContainer"]
 visible = false
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -122,7 +121,6 @@ grow_vertical = 2
 mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="RuleContainer/Rule2"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -137,7 +135,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="RuleContainer/Rule2"]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -155,7 +152,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule2"]
-layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -173,7 +169,7 @@ text = "[center]Attempts to harm the overseer at any time are forbidden.[/center
 
 [node name="Rule3" type="Control" parent="RuleContainer"]
 visible = false
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -182,7 +178,6 @@ grow_vertical = 2
 mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="RuleContainer/Rule3"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -197,7 +192,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="RuleContainer/Rule3"]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -215,7 +209,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule3"]
-layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -233,7 +226,7 @@ text = "[center]The overseer will not harm any participant unless they have brok
 
 [node name="Rule4" type="Control" parent="RuleContainer"]
 visible = false
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -242,7 +235,6 @@ grow_vertical = 2
 mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="RuleContainer/Rule4"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -257,7 +249,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="RuleContainer/Rule4"]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -275,7 +266,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule4"]
-layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -293,7 +283,7 @@ text = "[center]Destruction of any surveillance equipment is [color=maroon]stric
 
 [node name="Rule5" type="Control" parent="RuleContainer"]
 visible = false
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -302,7 +292,6 @@ grow_vertical = 2
 mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="RuleContainer/Rule5"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -317,7 +306,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="RuleContainer/Rule5"]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -335,7 +323,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule5"]
-layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -353,7 +340,7 @@ text = "[center]Shifts between daytime and nighttime will be announced at [color
 
 [node name="Rule6" type="Control" parent="RuleContainer"]
 visible = false
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -362,7 +349,6 @@ grow_vertical = 2
 mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="RuleContainer/Rule6"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -377,7 +363,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="RuleContainer/Rule6"]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -395,7 +380,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule6"]
-layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -413,7 +397,7 @@ text = "[center]A [color=gray]Blackened[/color] is a participant who has killed,
 
 [node name="Rule7" type="Control" parent="RuleContainer"]
 visible = false
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -422,7 +406,6 @@ grow_vertical = 2
 mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="RuleContainer/Rule7"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -437,7 +420,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="RuleContainer/Rule7"]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -455,7 +437,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule7"]
-layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -473,7 +454,7 @@ text = "[center]The [color=gray]Blackened[/color] must always be alive. In the e
 
 [node name="Rule8" type="Control" parent="RuleContainer"]
 visible = false
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -482,7 +463,6 @@ grow_vertical = 2
 mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="RuleContainer/Rule8"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -497,7 +477,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="RuleContainer/Rule8"]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -515,7 +494,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule8"]
-layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -533,7 +511,7 @@ text = "[center]The last person to cause a fatal injury that killed the victim i
 
 [node name="Rule9" type="Control" parent="RuleContainer"]
 visible = false
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -542,7 +520,6 @@ grow_vertical = 2
 mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="RuleContainer/Rule9"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -557,7 +534,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="RuleContainer/Rule9"]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -575,7 +551,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule9"]
-layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -593,7 +568,7 @@ text = "[center]If the [color=gray]Blackened[/color] dies by their own hands, th
 
 [node name="Rule10" type="Control" parent="RuleContainer"]
 visible = false
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -602,7 +577,6 @@ grow_vertical = 2
 mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="RuleContainer/Rule10"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -617,7 +591,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="RuleContainer/Rule10"]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -635,7 +608,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule10"]
-layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -653,7 +625,7 @@ text = "[center]A period of investigation will start once [color=orange]3 partic
 
 [node name="Rule11" type="Control" parent="RuleContainer"]
 visible = false
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -662,7 +634,6 @@ grow_vertical = 2
 mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="RuleContainer/Rule11"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -677,7 +648,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="RuleContainer/Rule11"]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -695,7 +665,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule11"]
-layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -713,7 +682,7 @@ text = "[center]If a participant were to choose a \"victim\" who was actually st
 
 [node name="Rule12" type="Control" parent="RuleContainer"]
 visible = false
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -722,7 +691,6 @@ grow_vertical = 2
 mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="RuleContainer/Rule12"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -737,7 +705,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="RuleContainer/Rule12"]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -755,7 +722,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule12"]
-layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -773,7 +739,7 @@ text = "[center]As soon as the investigation period starts, no murders are allow
 
 [node name="Rule13" type="Control" parent="RuleContainer"]
 visible = false
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -782,7 +748,6 @@ grow_vertical = 2
 mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="RuleContainer/Rule13"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -797,7 +762,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="TextureRect2" type="TextureRect" parent="RuleContainer/Rule13"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -812,7 +776,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="TextureRect3" type="TextureRect" parent="RuleContainer/Rule13"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -827,7 +790,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="TextureRect4" type="TextureRect" parent="RuleContainer/Rule13"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -842,7 +804,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="TextureRect5" type="TextureRect" parent="RuleContainer/Rule13"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -857,7 +818,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="TextureRect6" type="TextureRect" parent="RuleContainer/Rule13"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -872,7 +832,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="RuleContainer/Rule13"]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -890,7 +849,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule13"]
-layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -908,7 +866,7 @@ text = "[center]Once investigation has ended and there is a living [color=gray]B
 
 [node name="Rule14" type="Control" parent="RuleContainer"]
 visible = false
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -917,7 +875,6 @@ grow_vertical = 2
 mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="RuleContainer/Rule14"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -932,7 +889,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="TextureRect7" type="TextureRect" parent="RuleContainer/Rule14"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -947,7 +903,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="TextureRect2" type="TextureRect" parent="RuleContainer/Rule14"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -962,7 +917,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="TextureRect3" type="TextureRect" parent="RuleContainer/Rule14"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -977,7 +931,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="TextureRect4" type="TextureRect" parent="RuleContainer/Rule14"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -992,7 +945,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="TextureRect5" type="TextureRect" parent="RuleContainer/Rule14"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -1007,7 +959,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="TextureRect6" type="TextureRect" parent="RuleContainer/Rule14"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -1022,7 +973,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="RuleContainer/Rule14"]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -1040,8 +990,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule14"]
-visible = false
-layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -1055,11 +1003,11 @@ theme_override_font_sizes/italics_font_size = 36
 theme_override_font_sizes/bold_italics_font_size = 36
 theme_override_font_sizes/mono_font_size = 36
 bbcode_enabled = true
-text = "[center]During a Class Trial, all participants must work together to figure out who is the [color=gray]Blackened[/color] among them. They will be given a set amount of time to discuss their findings, after which a vote will begin.[/center]"
+text = "[center]During a Class Trial, the participants work together to figure out who is the [color=gray]Blackened[/color] among them. They will be given a set amount of time to discuss their findings, after which a vote will begin.[/center]"
 
 [node name="Rule15" type="Control" parent="RuleContainer"]
 visible = false
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1068,7 +1016,6 @@ grow_vertical = 2
 mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="RuleContainer/Rule15"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -1083,7 +1030,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="TextureRect2" type="TextureRect" parent="RuleContainer/Rule15"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -1098,7 +1044,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="TextureRect3" type="TextureRect" parent="RuleContainer/Rule15"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -1113,7 +1058,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="TextureRect4" type="TextureRect" parent="RuleContainer/Rule15"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -1128,7 +1072,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="TextureRect5" type="TextureRect" parent="RuleContainer/Rule15"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -1143,7 +1086,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="TextureRect6" type="TextureRect" parent="RuleContainer/Rule15"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -1158,7 +1100,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="RuleContainer/Rule15"]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -1176,7 +1117,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule15"]
-layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -1195,7 +1135,7 @@ text = "[center]If the [color=gray]Blackened[/color] receives the most votes, th
 
 [node name="Rule16" type="Control" parent="RuleContainer"]
 visible = false
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1204,7 +1144,6 @@ grow_vertical = 2
 mouse_filter = 1
 
 [node name="Label" type="Label" parent="RuleContainer/Rule16"]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -1222,7 +1161,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule16"]
-layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -1239,7 +1177,6 @@ bbcode_enabled = true
 text = "[center]If anyone else receives the most votes or there is a tie, every participant besides the [color=Gray]Blackened[/color] will be executed and the killing game will end.[/center]"
 
 [node name="TextureRect8" type="TextureRect" parent="RuleContainer/Rule16"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -1254,7 +1191,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="TextureRect11" type="TextureRect" parent="RuleContainer/Rule16"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -1269,7 +1205,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="TextureRect12" type="TextureRect" parent="RuleContainer/Rule16"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -1284,7 +1219,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="TextureRect9" type="TextureRect" parent="RuleContainer/Rule16"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -1299,7 +1233,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="TextureRect10" type="TextureRect" parent="RuleContainer/Rule16"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -1314,7 +1247,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="TextureRect4" type="TextureRect" parent="RuleContainer/Rule16"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -1330,7 +1262,7 @@ stretch_mode = 5
 
 [node name="Rule17" type="Control" parent="RuleContainer"]
 visible = false
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1339,7 +1271,6 @@ grow_vertical = 2
 mouse_filter = 1
 
 [node name="Label" type="Label" parent="RuleContainer/Rule17"]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -1357,7 +1288,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule17"]
-layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -1374,7 +1304,6 @@ bbcode_enabled = true
 text = "[center]Voting for yourself or refusing to vote at all is [color=maroon]strictly prohibited[/color].[/center]"
 
 [node name="TextureRect4" type="TextureRect" parent="RuleContainer/Rule17"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -1390,7 +1319,7 @@ stretch_mode = 5
 
 [node name="Rule18" type="Control" parent="RuleContainer"]
 visible = false
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1399,7 +1328,6 @@ grow_vertical = 2
 mouse_filter = 1
 
 [node name="Label" type="Label" parent="RuleContainer/Rule18"]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -1417,7 +1345,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="RuleContainer/Rule18"]
-layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -1434,7 +1361,6 @@ bbcode_enabled = true
 text = "[center]If the killing game is still continuing when only two people are left alive, the killing game will end.[/center]"
 
 [node name="TextureRect4" type="TextureRect" parent="RuleContainer/Rule18"]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -1449,7 +1375,6 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="ArrowLeft" type="TextureButton" parent="."]
-layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -1460,7 +1385,6 @@ texture_normal = ExtResource("19_k53bn")
 flip_h = true
 
 [node name="ArrowRight" type="TextureButton" parent="."]
-layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -1471,6 +1395,10 @@ offset_top = -64.0
 grow_horizontal = 0
 grow_vertical = 0
 texture_normal = ExtResource("19_k53bn")
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_ex43j")
+bus = &"SFX"
 
 [connection signal="pressed" from="ArrowLeft" to="." method="_on_arrow_left_pressed"]
 [connection signal="pressed" from="ArrowRight" to="." method="_on_arrow_right_pressed"]

@@ -79,16 +79,15 @@ grow_vertical = 0
 text = "Present"
 
 [node name="RegulationsButton" type="Button" parent="."]
-layout_mode = 1
+layout_mode = 0
 offset_left = 184.0
 offset_right = 356.0
 offset_bottom = 44.0
 text = "Regulations"
 
 [node name="Regulations" parent="." instance=ExtResource("3_5liir")]
+visible = false
 layout_mode = 1
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 0

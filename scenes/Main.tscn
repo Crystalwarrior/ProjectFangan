@@ -388,7 +388,7 @@ script = ExtResource("8_lm432")
 [node name="EvidenceButton" type="Button" parent="."]
 offset_right = 172.0
 offset_bottom = 44.0
-text = "Evidence"
+text = "PDA"
 
 [node name="EvidenceScreen" parent="." instance=ExtResource("9_3qwbu")]
 visible = false
