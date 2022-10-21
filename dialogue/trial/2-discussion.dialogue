@@ -4,7 +4,7 @@
 # Maki and Mondo examined the body. The details of the body discovery are put in the evidence
 # Himiko says she and Junko saw Teruteru walking to the gym at night, calling him the culprit, this starts the first circular debate
 
-import "res://dialogue/trial/evidence.dialogue" as evidence
+import "res://dialogue/evidence.dialogue" as evidence
 
 ~ start
 do change_music("res://music/[T5] Mode Select.ogg")
@@ -208,4 +208,4 @@ do change_bg("res://backgrounds/ct/3.png")
 do change_sprite("res://characters/angie/hand.png")
 Angie: We should slow down and hear the details.
 
-do start_dialogue("res://dialogue/trial/debate_1.dialogue", "start")
+do start_dialogue("res://dialogue/trial/3-debate.dialogue", "start")

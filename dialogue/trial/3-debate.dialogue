@@ -1,4 +1,4 @@
-import "res://dialogue/trial/evidence.dialogue" as evidence
+import "res://dialogue/evidence.dialogue" as evidence
 
 ~ start
 =>< evidence/loud_noise

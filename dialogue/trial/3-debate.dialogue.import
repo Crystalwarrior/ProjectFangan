@@ -1,0 +1,14 @@
+[remap]
+
+importer="dialogue_manager_compiler_3"
+type="Resource"
+uid="uid://dpeeiwrb686m4"
+path="res://.godot/imported/3-debate.dialogue-d14b4dffb80ccab71bf9bf486b787626.tres"
+
+[deps]
+
+source_file="res://dialogue/trial/3-debate.dialogue"
+dest_files=["res://.godot/imported/3-debate.dialogue-d14b4dffb80ccab71bf9bf486b787626.tres"]
+
+[params]
+

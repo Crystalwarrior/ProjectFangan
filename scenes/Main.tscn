@@ -1,7 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://t7uv0yare4un"]
+[gd_scene load_steps=28 format=3 uid="uid://c2sx3gcv5eqv8"]
 
 [ext_resource type="Script" path="res://scenes/Main.gd" id="1_um2e6"]
-[ext_resource type="Resource" uid="uid://dii1sef61ys8y" path="res://dialogue/trial/summary.dialogue" id="2_sic82"]
+[ext_resource type="Resource" uid="uid://dii1sef61ys8y" path="res://dialogue/trial/0-intro.dialogue" id="2_fswvb"]
 [ext_resource type="PackedScene" uid="uid://c6ntc6rlqskex" path="res://scenes/DialogBubble.tscn" id="3_05j2k"]
 [ext_resource type="Texture2D" uid="uid://gy2hydf0akkh" path="res://evidence/bg2x.png" id="5_a5kkb"]
 [ext_resource type="PackedScene" path="res://scenes/MusicPlayer.tscn" id="7_1shgo"]
@@ -291,7 +291,7 @@ _data = {
 
 [node name="Main" type="Node" node_paths=PackedStringArray("music_player", "sfx_player", "background", "char_sprite", "foreground", "effect_player", "evidence_player", "dialog_bubble", "statement_indicator", "evidence_button", "evidence_screen")]
 script = ExtResource("1_um2e6")
-dialogue_resource = ExtResource("2_sic82")
+dialogue_resource = ExtResource("2_fswvb")
 dialogue_title = "start"
 music_player = NodePath("MusicPlayer")
 sfx_player = NodePath("SFXPlayer")

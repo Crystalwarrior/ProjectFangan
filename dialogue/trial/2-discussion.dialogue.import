@@ -1,0 +1,14 @@
+[remap]
+
+importer="dialogue_manager_compiler_3"
+type="Resource"
+uid="uid://tgh5f2x152y7"
+path="res://.godot/imported/2-discussion.dialogue-b32b63e65363bdfd42bfca7aa2baba7f.tres"
+
+[deps]
+
+source_file="res://dialogue/trial/2-discussion.dialogue"
+dest_files=["res://.godot/imported/2-discussion.dialogue-b32b63e65363bdfd42bfca7aa2baba7f.tres"]
+
+[params]
+

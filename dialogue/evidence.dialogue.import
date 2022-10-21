@@ -1,0 +1,14 @@
+[remap]
+
+importer="dialogue_manager_compiler_3"
+type="Resource"
+uid="uid://duan7k7ckp76h"
+path="res://.godot/imported/evidence.dialogue-71e2c64d450974c0262c66814aca28bc.tres"
+
+[deps]
+
+source_file="res://dialogue/evidence.dialogue"
+dest_files=["res://.godot/imported/evidence.dialogue-71e2c64d450974c0262c66814aca28bc.tres"]
+
+[params]
+
