@@ -30,7 +30,7 @@ Monokuma: Now, a quick question.[wait=0.5] Who is the protagonist of Danganronpa
 	do change_sprite("res://characters/monokuma/Bashful.png")
 	do sfx("res://sounds/reveal.wav")
 	Monokuma: [wave amp=25 freq=5]That's correct! You got it right![/wave] [wait=0.5]He's such a loser, though!
-	do start_dialogue("res://dialogue/trial/discussion_1.dialogue", "start")
+	do start_dialogue("res://dialogue/trial/2-discussion.dialogue", "start")
 	=> END
 - Hajime Hinata
 	do change_sprite("res://characters/monokuma/Laugh.png")

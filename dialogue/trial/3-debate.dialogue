@@ -1,7 +1,9 @@
 import "res://dialogue/evidence.dialogue" as evidence
 
 ~ start
+=>< evidence/bowling_ball
 =>< evidence/loud_noise
+=>< evidence/teruteru_cooking
 =>< evidence/body_discovery
 =>< evidence/nagito_body_details
 do change_music("res://music/[DCS] The Last Babel.ogg")
@@ -15,7 +17,7 @@ if get_flag("tutorial_seen") == "2"
 	do select_statement(1)
 	set present_goto = "present_1"
 	do next_line("statement_2")
-	do previous_line("statement_3")
+	do previous_line("statement_4")
 
 do change_bg("res://backgrounds/ct/1.png")
 do change_sprite("res://characters/himiko/lookdownfinger.png")
@@ -30,17 +32,15 @@ if get_flag("tutorial_seen") == "2"
 	do next_line("statement_3")
 	do previous_line("statement_1")
 
-# This is the contradiction because Hajime was carrying an item that they said Teruteru had
-
 do change_bg("res://backgrounds/ct/3.png")
 do change_sprite("res://characters/junko/Restless.png")
-Junko: That's right! We saw Teruteru carrying around something. 
+Junko: Our attention was drawn towards the gym because we heard a loud noise, and that's when we spotted Teruteru!
 
 ~ statement_3
 if get_flag("tutorial_seen") == "2"
 	do select_statement(3)
 	set present_goto = "present_3"
-	do next_line("statement_3")
+	do next_line("statement_4")
 	do previous_line("statement_2")
 
 do change_bg("res://backgrounds/ct/1.png")
@@ -76,41 +76,80 @@ do set_statements(4)
 ~ present_1
 do next_line("")
 do previous_line("")
-if presented != "Library"
-	do change_sprite("res://characters/byakuya/Contempt.png")
-	Byakuya: What's this? You're presenting {{presented}} to me? Don't make me laugh.
-	=> statement_1
-else:
+if presented == "Bowling Ball"
+	do change_sprite("res://characters/himiko/talking.png")
+	Himiko: That's a suspicious-looking bowling ball. I dunno what it has to do with what I'm saying though.
+elif presented == "Teruteru Cooking"
+	do change_sprite("res://characters/himiko/lookdownfinger.png")
+	Himiko: Well he must've been cooking after we saw him, then!
+elif presented == "Loud Noise"
+	do change_sprite("res://characters/himiko/lookdownfinger.png")
+	Himiko: That noise is probably why I looked in the gym's direction...
+elif presented == "Body Discovery"
+	do change_sprite("res://characters/himiko/normal.png")
+	Himiko: That part came later!
+elif presented == "Nagito Body Details"
+	do change_sprite("res://characters/himiko/lookdownsad.png")
+	Himiko: Poor Nagito... Teruteru's done a number on him.
+else
+	do change_sprite("res://characters/himiko/talking.png")
+	Himiko: What are you showing me the {{presented}} for?
+=> statement_1
+
+~ present_2
+do next_line("")
+do previous_line("")
+if presented == "Teruteru Cooking"
 	do set_statements(0)
 	do sfx("res://sounds/objection.wav")
 	do change_music("res://music/[DCS] A Cyber-Like Enclosed Space.ogg")
 	do change_bg("res://backgrounds/ct/3.png")
 	do change_sprite("res://characters/hajime/Firm.png")
-	Hajime: That's wrong! Two people were in the library the entire time, and they never testified to seeing you!
+	Hajime: That's impossible! Me and Naegi were with Teruteru when the loud noise happened! Whoever you saw couldn't be Teruteru!
 	do effect("Flash")
-	do change_bg("res://backgrounds/ct/1.png")
-	do change_sprite("res://characters/byakuya/Shocked.png")
+	do change_bg("res://backgrounds/ct/3.png")
+	do change_sprite("res://characters/junko/Irritated.png")
 	do sfx("res://sounds/drama.wav")
-	Byakuya: ......
+	Junko: oh shit he cooka da mitbal
 	This is the end of the demo lol
 	=> END
-
-~ present_2
-do next_line("")
-do previous_line("")
-do change_sprite("res://characters/celeste/playful.png")
-Celeste: Oh ho? {{presented}}? I don't know anything about that.
-do change_bg("res://backgrounds/ct/3.png")
-do change_sprite("res://characters/hajime/Argumentative.png")
-Hajime: Wait a second who the fuck are you?
+elif presented == "Loud Noise"
+	do change_sprite("res://characters/junko/Restless.png")
+	Junko: Yeah, that's probably the same noise we heard.
+elif presented == "Body Discovery"
+	do change_sprite("res://characters/junko/Irritated.png")
+	Junko: That part came later!
+else
+	do change_sprite("res://characters/junko/Irritated.png")
+	Junko: The hell are you showing me the {{presented}} for?
 => statement_2
 
 ~ present_3
 do next_line("")
 do previous_line("")
-do change_sprite("res://characters/celeste/playful.png")
-Celeste: My, my. {{presented}}? I don't know anything about that.
-do change_bg("res://backgrounds/ct/3.png")
-do change_sprite("res://characters/hajime/Argumentative.png")
-Hajime: Wait a second who the fuck are you?
+if presented == "Bowling Ball"
+	do change_sprite("res://characters/himiko/finger.png")
+	Himiko: I can't make sense of this bowling ball yet, but Teruteru certainly had something to do with it!
+elif presented == "Loud Noise"
+	do change_sprite("res://characters/himiko/normalserious.png")
+	Himiko: You two heard a noise. So what? We heard it too!
+elif presented == "Teruteru Cooking"
+	do change_sprite("res://characters/himiko/angryshout.png")
+	Himiko: He killed Nagito and then went to cook spaghetti and meatballs!? He's horrible!
+elif presented == "Body Discovery"
+	do change_sprite("res://characters/himiko/finger.png")
+	Himiko: Yeah! We screamed so Mondo came later.
+elif presented == "Nagito Body Details"
+	do change_sprite("res://characters/himiko/angryshout.png")
+	Himiko: Horrible... Those bruises, Teruteru unleashed his inner gorilla on Nagito and swiftly finished him off! Can't we call for execution already?!
+else
+	do change_sprite("res://characters/himiko/prayshout.png")
+	Himiko: Showing me the {{presented}} is not going to change Teruteru's gruesome fate!
 => statement_3
+
+~ present_4
+do next_line("")
+do previous_line("")
+do change_sprite("res://characters/himiko/prayshout.png")
+Himiko: Showing me the {{presented}} is not going to change Teruteru's gruesome fate!
+=> statement_4

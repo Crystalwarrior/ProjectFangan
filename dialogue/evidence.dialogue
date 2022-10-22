@@ -1,10 +1,32 @@
 # Obtained during investigation
+~ bowling_ball
+if find_evidence("Bowling Ball") == -1
+	do add_evidence("Bowling Ball", "res://evidence/unknown.png", "A bowling ball was found in the gym with strands of white hair on it.")
+	do show_evidence("res://evidence/unknown.png", "center")
+	do sfx("res://sounds/equip.wav")
+	[color=lime][color=orange]"Bowling Ball"[/color] has been added to your evidence.[/color]
+	do hide_evidence("center")
+	[next=0.3]
+=> END
+
+# Obtained during investigation
 ~ loud_noise
 if find_evidence("Loud Noise") == -1
-	do add_evidence("Loud Noise", "res://evidence/pda.png", "Hajime and Naegi were together in the Janitors Closet during Night Time when the two of them heard a loud, cracking noise nearby.")
-	do show_evidence("res://evidence/pda.png", "center")
+	do add_evidence("Loud Noise", "res://evidence/unknown.png", "Hajime and Naegi were together in the Laundry Room during Night Time when the two of them heard a loud, cracking noise.")
+	do show_evidence("res://evidence/unknown.png", "center")
 	do sfx("res://sounds/equip.wav")
 	[color=lime][color=orange]"Loud Noise"[/color] has been added to your evidence.[/color]
+	do hide_evidence("center")
+	[next=0.3]
+=> END
+
+# Obtained during investigation
+~ teruteru_cooking
+if find_evidence("Teruteru Cooking") == -1
+	do add_evidence("Teruteru Cooking", "res://evidence/unknown.png", "After hearing the Loud Noise, Hajime and Naegi immediately found Teruteru cooking spaghetti and meatballs in the kitchen. The three of them stayed together until the Body Discovery Announcement.")
+	do show_evidence("res://evidence/unknown.png", "center")
+	do sfx("res://sounds/equip.wav")
+	[color=lime][color=orange]"Teruteru Cooking"[/color] has been added to your evidence.[/color]
 	do hide_evidence("center")
 	[next=0.3]
 => END
@@ -12,7 +34,7 @@ if find_evidence("Loud Noise") == -1
 # Obtained during discussion_1.dialogue
 ~ body_discovery
 if find_evidence("Body Discovery") == -1
-	do add_evidence("Body Discovery", "res://evidence/pda.png", "Junko, Mondo and Himiko found Nagitos body in the gym. His body was hanging from a climbing rope. The three of them activated the Body Discovery Announcement through their PDAs.")
+	do add_evidence("Body Discovery", "res://evidence/pda.png", "Junko, Mondo and Himiko found Nagito's body in the gym. His body was hanging from a climbing rope. The three of them activated the Body Discovery Announcement through their PDAs.")
 	do show_evidence("res://evidence/pda.png", "center")
 	do sfx("res://sounds/equip.wav")
 	[color=lime][color=orange]"Body Discovery"[/color] has been added to your evidence.[/color]
