@@ -13,12 +13,12 @@ if debug
 		=> END
 do change_bg("res://backgrounds/black.png")
 do effect("fadein")
-do change_sprite("res://characters/hajime/ex/serious.png")
-Hajime: My name is Hajime Hinata. The 16 of us have been kidnapped and forced into a death game.
-do change_sprite("res://characters/hajime/Distant.png")
-Hajime: Now, one of us has been[wait=0.5] [do change_sprite("res://characters/hajime/Grit.png")][do change_music("res://music/[CC] Sumo Seal.ogg")][color=red]murdered[/color].
-do change_sprite("res://characters/hajime/Closed.png")
-Hajime: We are forced to determine who is the culprit through the Class Trial, where the survivors will debate to seek the truth.
+do change_sprite("res://characters/mahiru/normal.png")
+Mahiru: My name is Mahiru Koizumi. The 16 of us have been kidnapped and forced into a death game.
+do change_sprite("res://characters/mahiru/disappointed.png")
+Mahiru: Now, one of us has been[wait=0.5] [do change_sprite("res://characters/mahiru/distressed.png")][do change_music("res://music/[CC] Sumo Seal.ogg")][color=red]murdered[/color].
+do change_sprite("res://characters/mahiru/disapproving.png")
+Mahiru: We are forced to determine who is the culprit through the Class Trial, where the survivors will debate to seek the truth.
 do effect("fadeout")
 [next=0.5]
 do change_sprite("")

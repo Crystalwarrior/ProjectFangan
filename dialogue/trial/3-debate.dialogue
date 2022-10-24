@@ -65,9 +65,9 @@ if get_flag("tutorial_seen") == ""
 
 ~ tutorial
 do change_bg("res://backgrounds/ct/3.png")
-do change_sprite("res://characters/hajime/Speaking.png")
+do change_sprite("res://characters/mahiru/undecided.png")
 Hajime: [color=aqua](That's weird,[wait=0.2] Himiko is repeating herself.)[/color]
-do change_sprite("res://characters/hajime/Explanation.png")
+do change_sprite("res://characters/mahiru/puzzled.png")
 Hajime: [color=aqua](This must be a [color=lime]Circular Debate[/color]. I can go back and forth between statements to search for a [color=orange]Contradiction[/color] by [color=lime]Presenting[/color] a piece of [color=orange]Evidence[/color].)[/color]
 do set_flag("tutorial_seen", "2")
 do set_statements(4)
@@ -104,8 +104,8 @@ if presented == "Teruteru Cooking"
 	do sfx("res://sounds/objection.wav")
 	do change_music("res://music/[DCS] A Cyber-Like Enclosed Space.ogg")
 	do change_bg("res://backgrounds/ct/3.png")
-	do change_sprite("res://characters/hajime/Firm.png")
-	Hajime: That's impossible! Me and Naegi were with Teruteru when the loud noise happened! Whoever you saw couldn't be Teruteru!
+	do change_sprite("res://characters/mahiru/frustrated.png")
+	Mahiru: That's impossible! Me and Naegi were with Teruteru when the loud noise happened! Whoever you saw couldn't be Teruteru!
 	do effect("Flash")
 	do change_bg("res://backgrounds/ct/3.png")
 	do change_sprite("res://characters/junko/Irritated.png")

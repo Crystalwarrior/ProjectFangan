@@ -70,8 +70,8 @@ do change_sprite("res://characters/teruteru/Uneasy.png")
 Teruteru: Why? Don't we all know how it was?
 
 do change_bg("res://backgrounds/ct/3.png")
-do change_sprite("res://characters/mahiru/distressed.png")
-Mahiru: I... couldn't look... It was a bit too much for me, I'm not sure I can do this...
+do change_sprite("res://characters/hajime/Grit.png")
+Hajime: I... couldn't look... It was a bit too much for me, I'm not sure I can do this...
 
 do change_bg("res://backgrounds/ct/1.png")
 do change_sprite("res://characters/teruteru/Worried.png")
@@ -110,8 +110,8 @@ do change_sprite("res://characters/himiko/lookdownsad.png")
 Himiko: ...I was the third...
 
 do change_bg("res://backgrounds/ct/3.png")
-do change_sprite("res://characters/hajime/Explanation.png")
-Hajime: So you were together with Junko and Mondo?
+do change_sprite("res://characters/mahiru/Inquisitive.png")
+Mahiru: So you were together with Junko and Mondo?
 
 do change_bg("res://backgrounds/ct/2.png")
 do change_sprite("res://characters/himiko/lookdownsad.png")
@@ -122,8 +122,8 @@ do change_sprite("res://characters/mondo/thinking.png")
 Mondo: All three of us triggered the Body Discovery Announcement on our PDA's after we snapped out of it.
 
 do change_bg("res://backgrounds/ct/3.png")
-do change_sprite("res://characters/hajime/Thinking.png")
-Hajime: [color=aqua](So the three of them can back each other up. I should note that down in my evidence.)[/color]
+do change_sprite("res://characters/mahiru/undecided.png")
+Mahiru: [color=aqua](So the three of them can back each other up. I should note that down in my evidence.)[/color]
 
 =>< evidence/body_discovery
 
@@ -148,8 +148,8 @@ do change_sprite("res://characters/maki/Thinking.png")
 Maki: Alright. There was a rope burn on Nagito's neck. His neck, spine and limbs could bend in unnatural ways - definitely fractured. We also found burns and bruises all throughout his body.
 
 do change_bg("res://backgrounds/ct/3.png")
-do change_sprite("res://characters/hajime/Thinking.png")
-Hajime: [color=aqua](Huh, this sounds overkill for a simple hanging. I'll have to keep these details in mind.)[/color]
+do change_sprite("res://characters/mahiru/confused.png")
+Mahiru: [color=aqua](Huh, this sounds overkill for a simple hanging. I'll have to keep these details in mind.)[/color]
 
 =>< evidence/nagito_body_details
 
@@ -158,8 +158,8 @@ do change_sprite("res://characters/himiko/serious.png")
 Himiko: I saw...
 
 do change_bg("res://backgrounds/ct/3.png")
-do change_sprite("res://characters/hajime/ExplanationS.png")
-Hajime: Huh? You saw..? What did you see, Himiko?
+do change_sprite("res://characters/mahiru/confused.png")
+Mahiru: Huh? You saw..? What did you see, Himiko?
 
 ~ himiko_saw_culprit
 do stop_music()
@@ -168,9 +168,9 @@ do change_sprite("res://characters/himiko/serious.png")
 Himiko: I saw...[wait=1.0] [do change_sprite("res://characters/himiko/shoutingmad.png")][do sfx("res://sounds/shock.wav")][do change_music("res://music/[UNIB] Paradox Altar.ogg")][color=red]the culprit![/color]
 
 do change_bg("res://backgrounds/ct/3.png")
-do change_sprite("res://characters/hajime/Concerned.png")
+do change_sprite("res://characters/mahiru/surprised.png")
 do sfx("res://sounds/drama.wav")
-Hajime: [shake rate=20 level=5]WHAT?![/shake]
+Mahiru: [shake rate=20 level=5]WHAT?![/shake]
 
 do change_bg("res://backgrounds/ct/2.png")
 do change_sprite("res://characters/himiko/point.png")

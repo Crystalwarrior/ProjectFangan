@@ -12,7 +12,7 @@ if find_evidence("Bowling Ball") == -1
 # Obtained during investigation
 ~ loud_noise
 if find_evidence("Loud Noise") == -1
-	do add_evidence("Loud Noise", "res://evidence/unknown.png", "Hajime and Naegi were together in the Laundry Room during Night Time when the two of them heard a loud, cracking noise.")
+	do add_evidence("Loud Noise", "res://evidence/unknown.png", "Mahiru and Naegi were together in the Laundry Room during Night Time when the two of them heard a loud, cracking noise.")
 	do show_evidence("res://evidence/unknown.png", "center")
 	do sfx("res://sounds/equip.wav")
 	[color=lime][color=orange]"Loud Noise"[/color] has been added to your evidence.[/color]
@@ -23,7 +23,7 @@ if find_evidence("Loud Noise") == -1
 # Obtained during investigation
 ~ teruteru_cooking
 if find_evidence("Teruteru Cooking") == -1
-	do add_evidence("Teruteru Cooking", "res://evidence/unknown.png", "After hearing the Loud Noise, Hajime and Naegi immediately found Teruteru cooking spaghetti and meatballs in the kitchen. The three of them stayed together until the Body Discovery Announcement.")
+	do add_evidence("Teruteru Cooking", "res://evidence/unknown.png", "After hearing the Loud Noise, Mahiru and Naegi immediately found Teruteru cooking spaghetti and meatballs in the kitchen. The three of them stayed together until the Body Discovery Announcement.")
 	do show_evidence("res://evidence/unknown.png", "center")
 	do sfx("res://sounds/equip.wav")
 	[color=lime][color=orange]"Teruteru Cooking"[/color] has been added to your evidence.[/color]
